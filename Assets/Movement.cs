@@ -9,11 +9,11 @@ public class Movement : MonoBehaviour
     public float jumpForce = 5;
     public float movementForce = 2;
     bool isGrounded = true;
-    Renderer renderer;
+    Renderer renderers;
     // Start is called before the first frame update
     void Start()
     {
-        renderer = player.GetComponent<Renderer>();
+        renderers = player.GetComponent<Renderer>();
 
     }
     void OnCollisionStay()
@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
         }
         if (collision.collider.name != "Floor")
         {
-            renderer.material.color = new Color(255, 255, 255);
+            renderers.material.color = new Color(255, 255, 255);
         }
 
     }
