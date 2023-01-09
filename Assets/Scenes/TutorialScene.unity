@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.5019536, g: 0.5019536, b: 0.5019536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -496,6 +496,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfddcd02f8f8161488bef9b318e1fa40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas1: {fileID: 272798318}
+  canvas2: {fileID: 2018853272}
+  canvas3: {fileID: 1378950559}
+  floatingText: {fileID: 1725926639}
 --- !u!4 &78465753
 Transform:
   m_ObjectHideFlags: 0
@@ -3134,7 +3138,7 @@ SpriteRenderer:
   m_Size: {x: 6.12, y: 3.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1289724931
@@ -3454,6 +3458,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f771ecd816adae45a4ad2d51170ee97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1494702655}
+  rb: {fileID: 1494702658}
+  jumpForce: 2.5
+  speed: 200
+  isGrounded: 1
+  stopJumped: 0
 --- !u!54 &1494702658
 Rigidbody:
   m_ObjectHideFlags: 0

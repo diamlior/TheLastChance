@@ -3049,8 +3049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1873114491}
   rb: {fileID: 1873114493}
-  jumpForce: 5
-  speed: 100
+  jumpForce: 2.5
+  speed: 200
   isGrounded: 1
   stopJumped: 0
 --- !u!54 &1873114493
