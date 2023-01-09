@@ -78,11 +78,11 @@ public class Ball : MonoBehaviour
                 string nextScene = "";
                 switch (sceneName)
                 {
-                    case "SampleScene":
+                    case "StageOne":
                         nextScene = "PenaltyScene";
                         break;
                     case "PenaltyScene":
-                        nextScene = "SampleScene";
+                        nextScene = "StageOne";
                         break;
                     default:
                         nextScene = "PenaltyScene";
