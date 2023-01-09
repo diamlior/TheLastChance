@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,9 @@ public class Movement : MonoBehaviour
 {
     public GameObject player;
     public Rigidbody rb;
-    
+    public GameObject FailedScreen;
+    public GameObject pauseButton;
+
     public float jumpForce = 5;
     public float speed = 100;
     public bool isGrounded = true, stopJumped = false;
@@ -18,7 +21,7 @@ public class Movement : MonoBehaviour
     Renderer renderers;
     Transform transform;
     private LevelChangerScript levelChangeScript;
-    public bool isPaused = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -112,10 +115,31 @@ public class Movement : MonoBehaviour
             else
             {
                 Debug.Log("You are dead!");
-                levelChangeScript.FadeToLevel(sceneName);
+                FailedScreen.SetActive(true);
+                pauseButton.SetActive(false);
+                PauseAll();
+                //levelChangeScript.FadeToLevel(sceneName);
             }
 
         }
 
     }
+
+    public void PauseAll()
+    {
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        foreach (GameObject obs in obstacles) {
+            obs.GetComponent<Obstacle>().PauseObject();
+                }
+    }
+
+    public void ReturnAll()
+    {
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        foreach (GameObject obs in obstacles)
+        {
+            obs.GetComponent<Obstacle>().ReturnObject();
+        }
+    }
+
 }
