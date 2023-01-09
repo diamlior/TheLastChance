@@ -599,7 +599,7 @@ RectTransform:
   - {fileID: 1197473491}
   - {fileID: 321238729}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2255,7 +2255,7 @@ SpriteRenderer:
   m_Size: {x: 6.12, y: 3.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1517727668
@@ -2342,7 +2342,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d1aa639621716045b8035c4b37d6487, type: 2}
+  - {fileID: 2100000, guid: 200ddc66641e9084d885c3ffc119c87a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2385,7 +2385,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610492744
 GameObject:
@@ -3047,6 +3047,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f771ecd816adae45a4ad2d51170ee97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1873114491}
+  rb: {fileID: 1873114493}
+  jumpForce: 5
+  speed: 100
+  isGrounded: 1
+  stopJumped: 0
 --- !u!54 &1873114493
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3573,7 +3579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643789487048051178, guid: 8ed00de3a96aaf641bcbe557dde9bb21, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5643789487048051178, guid: 8ed00de3a96aaf641bcbe557dde9bb21, type: 3}
       propertyPath: m_LocalPosition.x
