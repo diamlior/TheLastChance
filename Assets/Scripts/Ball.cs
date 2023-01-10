@@ -12,6 +12,15 @@ public class Ball : MonoBehaviour
     public Transform target;
     // forceUI is for the player to choose how strong to shoot the ball
     public Slider forceUI;
+    
+    GoalKeeper goal;
+
+    public GameObject GoalKeeper;
+
+    Vector3 StartPos;
+
+    Vector3 GoalPos;
+
     private LevelChangerScript levelChangeScript;
     
     string sceneName = "";
@@ -20,6 +29,9 @@ public class Ball : MonoBehaviour
     {
         levelChangeScript = GameObject.Find("LevelChanger").GetComponent<LevelChangerScript>();
         sceneName = SceneManager.GetActiveScene().name;
+
+        StartPos = transform.position;
+        GoalPos = GoalKeeper.transform.position;
     }
     // The ball object
     //public GameObject ball;
@@ -36,7 +48,7 @@ public class Ball : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space)) //shoot
         {
-            shoot();
+            //shoot();
             StartCoroutine(Wait());
         }
     }
@@ -60,9 +72,22 @@ public class Ball : MonoBehaviour
 
     IEnumerator Wait()
     {
+        shoot();
+        yield return new WaitForSeconds(1.5f); //wait before reseting slider and force
+        FindObjectOfType<GoalKeeper>().GoalMove();
         yield return new WaitForSeconds(1.5f);
         ResetGauge();
+
+        GetComponent<Rigidbody>().angularDrag = 40;
+        yield return new WaitForSeconds(3f);
+
+        transform.position = StartPos; //reset ball position
+        GoalKeeper.transform.position = GoalPos; //reset GoalKepper Position
+
+        FindObjectOfType<GoalKeeper>().Reset();
+        FindObjectOfType<GoalKeeper>().Move = 0; //reset index
     }
+    
     void OnCollisionEnter(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
@@ -78,11 +103,11 @@ public class Ball : MonoBehaviour
                 string nextScene = "";
                 switch (sceneName)
                 {
-                    case "SampleScene":
+                    case "StageOne":
                         nextScene = "PenaltyScene";
                         break;
                     case "PenaltyScene":
-                        nextScene = "SampleScene";
+                        nextScene = "StageOne";
                         break;
                     default:
                         nextScene = "PenaltyScene";

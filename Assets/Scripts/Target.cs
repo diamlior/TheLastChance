@@ -32,5 +32,15 @@ public class Target : MonoBehaviour
         {
             transform.Translate(-Vector3.up * 3f * Time.deltaTime);
         }
+
+        //limit the x,y values
+        if(transform.position.x < 420)
+            transform.position = new Vector3(420, transform.position.y, transform.position.z);
+        if(transform.position.x > 424)
+            transform.position = new Vector3(424, transform.position.y, transform.position.z);
+        if(transform.position.y > 4)
+            transform.position = new Vector3(transform.position.y, 4, transform.position.z);
+        if(transform.position.y < 1)
+            transform.position = new Vector3(transform.position.y, 1, transform.position.z);
     }
 }
