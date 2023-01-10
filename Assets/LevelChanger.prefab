@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5643789485877955734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 422.13397, y: 0.96, z: 99.3}
+  m_LocalPosition: {x: 422.13397, y: 0.96, z: 98.46}
   m_LocalScale: {x: 4.5, y: 4.62, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -190,6 +190,7 @@ MonoBehaviour:
   obstacle: {fileID: 5643789485877955730}
   obstacle_go: {fileID: 5643789485877955734}
   speed: 10
+  isPaused: 0
 --- !u!54 &5643789485877955740
 Rigidbody:
   m_ObjectHideFlags: 0
