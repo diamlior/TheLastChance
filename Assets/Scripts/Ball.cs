@@ -24,7 +24,10 @@ public class Ball : MonoBehaviour
     private LevelChangerScript levelChangeScript;
     
     string sceneName = "";
-
+    bool didShoot = false;
+    bool didScore = false;
+    public GameObject FailedScreen;
+    public GameObject pauseButton;
     private void Start()
     {
         levelChangeScript = GameObject.Find("LevelChanger").GetComponent<LevelChangerScript>();
@@ -39,7 +42,8 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (didShoot)
+            return;
         if (Input.GetKey(KeyCode.Space)) //Fill slider depending on Force value
         {
             Force++;
@@ -50,6 +54,7 @@ public class Ball : MonoBehaviour
         {
             //shoot();
             StartCoroutine(Wait());
+            
         }
     }
 
@@ -72,6 +77,7 @@ public class Ball : MonoBehaviour
 
     IEnumerator Wait()
     {
+        didShoot = true;
         shoot();
         yield return new WaitForSeconds(1.5f); //wait before reseting slider and force
         FindObjectOfType<GoalKeeper>().GoalMove();
@@ -79,15 +85,30 @@ public class Ball : MonoBehaviour
         ResetGauge();
 
         //GetComponent<Rigidbody>().angularDrag = 40;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         transform.position = StartPos; //reset ball position
         GoalKeeper.transform.position = GoalPos; //reset GoalKepper Position
 
         FindObjectOfType<GoalKeeper>().Reset();
         FindObjectOfType<GoalKeeper>().Move = 0; //reset index
+        if (!didScore)
+        {
+            FailedScreen.SetActive(true);
+            pauseButton.SetActive(false);
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        }
+            
+
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.name + " Triggered");
+        if (other.name.Equals("Net"))
+            didScore = true;
+
+    }
     void OnCollisionEnter(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
@@ -98,9 +119,11 @@ public class Ball : MonoBehaviour
         string collider = collision.collider.name;
         if (collider != "Floor")
         {
-            if (collider.Equals("EndingBlock"))
+            Debug.Log(collider + " Collid");
+            if (collider.Equals("EndingBlock") && didScore)
             {
-                string nextScene = "";
+                
+                string nextScene;
                 switch (sceneName)
                 {
                     case "StageOne":
