@@ -103,9 +103,6 @@ public class Movement : MonoBehaviour
                     case "StageOne":
                         nextScene = "PenaltyScene";
                         break;
-                    case "TutorialScene":
-                        nextScene = "PenaltyScene";
-                        break;
                     case "PenaltyScene":
                         nextScene = "StageOne";
                         break;
