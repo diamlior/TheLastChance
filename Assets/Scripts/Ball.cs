@@ -78,7 +78,7 @@ public class Ball : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         ResetGauge();
 
-        GetComponent<Rigidbody>().angularDrag = 40;
+        //GetComponent<Rigidbody>().angularDrag = 40;
         yield return new WaitForSeconds(3f);
 
         transform.position = StartPos; //reset ball position
