@@ -100,16 +100,20 @@ public class Movement : MonoBehaviour
                 string nextScene = "";
                 switch (sceneName)
                 {
-                    case "SampleScene":
+                    case "StageOne":
+                        nextScene = "PenaltyScene";
+                        break;
+                    case "TutorialScene":
                         nextScene = "PenaltyScene";
                         break;
                     case "PenaltyScene":
-                        nextScene = "SampleScene";
+                        nextScene = "StageOne";
                         break;
                     default:
                         nextScene = "PenaltyScene";
                         break;
                 }
+                Debug.Log("next scene: " + nextScene);
                 levelChangeScript.FadeToLevel(nextScene);
             }
             else

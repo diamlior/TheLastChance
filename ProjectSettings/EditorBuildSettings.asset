@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TutorialScene.unity
     guid: b1af17acb8da76947bb6574302b055a1
   - enabled: 1
-    path: Assets/Scenes/StageOne.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/PenaltyScene.unity
     guid: 48d454f816db90d4b8d7f874ffcfd179
+  - enabled: 1
+    path: Assets/Scenes/StageOne.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
