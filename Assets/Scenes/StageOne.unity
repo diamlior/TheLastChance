@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 26058427}
   obstacle_go: {fileID: 26058421}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &26058424
 BoxCollider:
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 112305272}
   obstacle_go: {fileID: 112305266}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &112305269
 BoxCollider:
@@ -945,7 +945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 429358034}
   obstacle_go: {fileID: 429358028}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &429358031
 BoxCollider:
@@ -1852,7 +1852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 870326801}
   obstacle_go: {fileID: 870326795}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &870326798
 BoxCollider:
@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 883803087}
   obstacle_go: {fileID: 883803081}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &883803084
 BoxCollider:
@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 919847338}
   obstacle_go: {fileID: 919847332}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &919847335
 BoxCollider:
@@ -2329,7 +2329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1058324346}
   obstacle_go: {fileID: 1058324340}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &1058324343
 BoxCollider:
@@ -2604,7 +2604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1070350113}
   obstacle_go: {fileID: 1070350107}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &1070350110
 BoxCollider:
@@ -4439,7 +4439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1843584218}
   obstacle_go: {fileID: 1843584212}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &1843584215
 BoxCollider:
@@ -4561,6 +4561,7 @@ MonoBehaviour:
   speed: 200
   isGrounded: 1
   stopJumped: 0
+  isAlive: 1
 --- !u!54 &1873114493
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4726,7 +4727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1918022483}
   obstacle_go: {fileID: 1918022477}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &1918022480
 BoxCollider:
@@ -4857,7 +4858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 2039853911}
   obstacle_go: {fileID: 2039853905}
-  speed: 10
+  speed: 13
   isPaused: 0
 --- !u!65 &2039853908
 BoxCollider:

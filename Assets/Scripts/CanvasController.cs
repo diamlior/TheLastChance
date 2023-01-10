@@ -4,10 +4,12 @@ using System.Collections;
 
 public class CanvasController : MonoBehaviour
 {
+    public GameObject player;
     public Canvas canvas1;
     public Canvas canvas2;
     public Canvas canvas3;
     public GameObject floatingText;
+    Movement player_movement;
 
     bool leftArrowPressed = false;
     bool rightArrowPressed = false;
@@ -17,10 +19,13 @@ public class CanvasController : MonoBehaviour
         canvas1.enabled = true;
         canvas2.enabled = false;
         canvas3.enabled = false;
+        player_movement = player.GetComponent<Movement>();
     }
 
     void Update()
     {
+        if (!player_movement.isEnabled)
+            return;
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (!leftArrowPressed)
