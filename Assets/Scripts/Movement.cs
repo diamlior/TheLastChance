@@ -137,6 +137,8 @@ public class Movement : MonoBehaviour
             obs.GetComponent<Obstacle>().PauseObject();
                 }
         isEnabled = false;
+
+        rb.constraints = RigidbodyConstraints.FreezePosition;
     }
 
     public void ReturnAll()
@@ -147,6 +149,7 @@ public class Movement : MonoBehaviour
             obs.GetComponent<Obstacle>().ReturnObject();
         }
         isEnabled = true;
+        rb.constraints = RigidbodyConstraints.None;
     }
 
 }
