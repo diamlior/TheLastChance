@@ -25,6 +25,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         transform = player.GetComponent<Transform>();
         startingX = transform.position.x;
         currentX = (float)System.Math.Round(transform.position.x);
@@ -123,6 +124,8 @@ public class Movement : MonoBehaviour
                 FailedScreen.SetActive(true);
                 pauseButton.SetActive(false);
                 PauseAll();
+                rb.constraints = RigidbodyConstraints.None;
+                rb.AddForce(new Vector3(1, 1, -1) * 100);
                 //levelChangeScript.FadeToLevel(sceneName);
             }
 
@@ -130,7 +133,8 @@ public class Movement : MonoBehaviour
 
     }
 
-    public void PauseAll()
+   
+        public void PauseAll()
     {
         GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
         foreach (GameObject obs in obstacles) {
@@ -148,8 +152,8 @@ public class Movement : MonoBehaviour
         {
             obs.GetComponent<Obstacle>().ReturnObject();
         }
-        isEnabled = true;
         rb.constraints = RigidbodyConstraints.None;
+        isEnabled = true;
     }
 
 }
