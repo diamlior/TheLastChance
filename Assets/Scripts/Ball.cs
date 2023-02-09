@@ -105,10 +105,11 @@ public class Ball : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name + " Triggered");
-        if (other.name.Equals("Net"))
+        if (other.name.Equals("Goal"))
             didScore = true;
-
     }
+
+
     void OnCollisionEnter(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
@@ -120,7 +121,7 @@ public class Ball : MonoBehaviour
         if (collider != "Floor")
         {
             Debug.Log(collider + " Collid");
-            if (collider.Equals("EndingBlock") && didScore)
+            if (didScore)
             {
                 
                 string nextScene;
