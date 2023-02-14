@@ -28,6 +28,7 @@ public class Ball : MonoBehaviour
     bool didScore = false;
     public GameObject FailedScreen;
     public GameObject pauseButton;
+    public GameObject KeysCanvas;
     public Canvas goalMsgCanvas;
     private void Start()
     {
@@ -96,6 +97,7 @@ public class Ball : MonoBehaviour
         //FindObjectOfType<GoalKeeperNew>().Move = 0; //reset index
         if (!didScore)
         {
+            KeysCanvas.SetActive(false);
             FailedScreen.SetActive(true);
             pauseButton.SetActive(false);
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
