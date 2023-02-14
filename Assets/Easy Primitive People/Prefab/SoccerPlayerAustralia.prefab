@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 405471798016085562}
   - component: {fileID: 3472093475012023065}
   m_Layer: 0
-  m_Name: SoccerPlayerGreen
+  m_Name: SoccerPlayerAustralia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +183,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 44abf8e2aea254e469a675272df7feb4, type: 2}
+  - {fileID: 2100000, guid: 446a06e13466c2e40892bd720fc6a9bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1749,7 +1749,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 47f8481dd8680474aacf6ae68f330dcd, type: 2}
+  - {fileID: 2100000, guid: 44abf8e2aea254e469a675272df7feb4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
