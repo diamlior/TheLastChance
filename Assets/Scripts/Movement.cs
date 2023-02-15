@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -109,7 +109,13 @@ public class Movement : MonoBehaviour
                         nextScene = "PenaltyScene";
                         break;
                     case "PenaltyScene":
-                        nextScene = "StageOne";
+                        nextScene = "StageTwo";
+                        break;
+                    case "StageTwo":
+                        nextScene = "PenaltySceneTwo";
+                        break;
+                    case "PenaltySceneTwo":
+                        nextScene = "StageTwo";
                         break;
                     default:
                         nextScene = "PenaltyScene";
