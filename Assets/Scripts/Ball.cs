@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,9 +13,9 @@ public class Ball : MonoBehaviour
     // forceUI is for the player to choose how strong to shoot the ball
     public Slider forceUI;
     
-    GoalKeeper goal;
+    //GoalKeeper goal;
 
-    public GameObject GoalKeeper;
+    public GameObject GoalKeeperNew;
 
     Vector3 StartPos;
 
@@ -28,13 +28,16 @@ public class Ball : MonoBehaviour
     bool didScore = false;
     public GameObject FailedScreen;
     public GameObject pauseButton;
+    public GameObject KeysCanvas;
+    public Canvas goalMsgCanvas;
     private void Start()
     {
         levelChangeScript = GameObject.Find("LevelChanger").GetComponent<LevelChangerScript>();
         sceneName = SceneManager.GetActiveScene().name;
 
         StartPos = transform.position;
-        GoalPos = GoalKeeper.transform.position;
+        GoalPos = GoalKeeperNew.transform.position;
+        goalMsgCanvas.enabled = false;
     }
     // The ball object
     //public GameObject ball;
@@ -80,20 +83,21 @@ public class Ball : MonoBehaviour
         didShoot = true;
         shoot();
         yield return new WaitForSeconds(1.5f); //wait before reseting slider and force
-        FindObjectOfType<GoalKeeper>().GoalMove();
-        yield return new WaitForSeconds(1.5f);
+        //FindObjectOfType<GoalKeeperNew>().GoalMove();
+        //yield return new WaitForSeconds(1.5f);
         ResetGauge();
 
         //GetComponent<Rigidbody>().angularDrag = 40;
         yield return new WaitForSeconds(1f);
 
         transform.position = StartPos; //reset ball position
-        GoalKeeper.transform.position = GoalPos; //reset GoalKepper Position
+        GoalKeeperNew.transform.position = GoalPos; //reset GoalKepper Position
 
-        FindObjectOfType<GoalKeeper>().Reset();
-        FindObjectOfType<GoalKeeper>().Move = 0; //reset index
+        //FindObjectOfType<GoalKeeperNew>().Reset();
+        //FindObjectOfType<GoalKeeperNew>().Move = 0; //reset index
         if (!didScore)
         {
+            KeysCanvas.SetActive(false);
             FailedScreen.SetActive(true);
             pauseButton.SetActive(false);
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
@@ -102,13 +106,20 @@ public class Ball : MonoBehaviour
 
     }
 
+    IEnumerator PauseForThreeSeconds()
+    {
+        yield return new WaitForSeconds(3f);
+        Debug.Log("Two seconds have passed!");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name + " Triggered");
-        if (other.name.Equals("Net"))
+        if (other.name.Equals("Goal"))
             didScore = true;
-
     }
+
+
     void OnCollisionEnter(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
@@ -120,17 +131,24 @@ public class Ball : MonoBehaviour
         if (collider != "Floor")
         {
             Debug.Log(collider + " Collid");
-            if (collider.Equals("EndingBlock") && didScore)
+            if (didScore)
             {
-                
+                goalMsgCanvas.enabled = true;
                 string nextScene;
+                StartCoroutine(PauseForThreeSeconds());
                 switch (sceneName)
                 {
                     case "StageOne":
                         nextScene = "PenaltyScene";
                         break;
                     case "PenaltyScene":
-                        nextScene = "StageOne";
+                        nextScene = "StageTwo";
+                        break;
+                    case "StageTwo":
+                        nextScene = "PenaltySceneTwo";
+                        break;
+                    case "PenaltySceneTwo":
+                        nextScene = "StageTwo";
                         break;
                     default:
                         nextScene = "PenaltyScene";

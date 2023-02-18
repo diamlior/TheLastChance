@@ -6,7 +6,7 @@ using UnityEngine;
 public class CountDown : MonoBehaviour
 {
     public float timeBetweenCounts = 1.5f;
-    public GameObject one, two, three, go, player, optional;
+    public GameObject one, two, three, go, player, optional, PreviewCanvas;
     Movement movement;
     // Start is called before the first frame update
     void Start()
@@ -41,6 +41,7 @@ public class CountDown : MonoBehaviour
         go.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         go.SetActive(false);
+        PreviewCanvas.SetActive(false);
         movement.ReturnAll();
         if(!(optional == null))
         {

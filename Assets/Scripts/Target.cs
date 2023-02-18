@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    public float minX = 418;
+    public float maxX = 426;
+    public float minY = 1.25f;
+    public float maxY = 4;  
     // Start is called before the first frame update
     void Start()
-    {
-        
+    { 
     }
 
     // Update is called once per frame
@@ -34,13 +37,26 @@ public class Target : MonoBehaviour
         }
 
         //limit the x,y values
-        if(transform.position.x < 420)
-            transform.position = new Vector3(420, transform.position.y, transform.position.z);
-        if(transform.position.x > 424)
-            transform.position = new Vector3(424, transform.position.y, transform.position.z);
-        if(transform.position.y > 4)
-            transform.position = new Vector3(transform.position.y, 4, transform.position.z);
-        if(transform.position.y < 1)
-            transform.position = new Vector3(transform.position.y, 1, transform.position.z);
+        Vector3 position = transform.position;
+
+        if (position.x < minX)
+        {
+            position.x = minX;
+        }
+        else if (position.x > maxX)
+        {
+            position.x = maxX;
+        }
+
+        if (position.y < minY)
+        {
+            position.y = minY;
+        }
+        else if (position.y > maxY)
+        {
+            position.y = maxY;
+        }
+
+        transform.position = position;
     }
 }
