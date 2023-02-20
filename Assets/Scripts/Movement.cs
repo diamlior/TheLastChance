@@ -143,9 +143,21 @@ public class Movement : MonoBehaviour
         public void PauseAll()
     {
         GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-        foreach (GameObject obs in obstacles) {
-            obs.GetComponent<Obstacle>().PauseObject();
-                }
+        try {
+            foreach (GameObject obs in obstacles)
+            {
+                Obstacle obstacle = obs.GetComponent<Obstacle>();
+                if (obstacle != null)
+                    obstacle.PauseObject();
+                else
+                    Debug.Log(obs.name);
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+        }
+        
         isEnabled = false;
 
         rb.constraints = RigidbodyConstraints.FreezePosition;

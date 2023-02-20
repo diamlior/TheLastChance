@@ -5,14 +5,15 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform obstacle;
-    public GameObject obstacle_go;
+    Transform obstacle;
+    GameObject obstacle_go;
     public float speed = 1;
     public bool isPaused = false;
 
     void Start()
     {
-        
+        obstacle_go = gameObject;
+        obstacle = transform;
     }
 
     // Update is called once per frame
