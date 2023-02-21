@@ -170,7 +170,6 @@ public class Movement : MonoBehaviour
             if (didScore)
             {
                 Debug.Log("OnCollision did score is true");
-                //PauseAll();
                 SceneSwitcher();
             }
             if (collider.Equals("EndingBlock"))
@@ -287,7 +286,6 @@ public class Movement : MonoBehaviour
 
         rb.constraints = RigidbodyConstraints.FreezePosition;
     }
-    
 
     public void ReturnAll()
     {
