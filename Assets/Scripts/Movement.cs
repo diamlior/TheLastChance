@@ -235,20 +235,17 @@ public class Movement : MonoBehaviour
         string nextScene = "";
         switch (sceneName)
         {
-            case "StageOne":
-                nextScene = "PenaltyScene";
+            case "Tutorial":
+                nextScene = "StageOne";
                 break;
-            case "PenaltyScene":
+            case "StageOne":
                 nextScene = "StageTwo";
                 break;
             case "StageTwo":
-                nextScene = "PenaltySceneTwo";
-                break;
-            case "PenaltySceneTwo":
-                nextScene = "StageTwo";
+                nextScene = "MainMenu";
                 break;
             default:
-                nextScene = "PenaltyScene";
+                nextScene = "MainMenu";
                 break;
         }
         Debug.Log("next scene: " + nextScene);
