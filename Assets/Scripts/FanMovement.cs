@@ -28,17 +28,26 @@ public class FanMovement : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        // Calculate the new Y positions for each fan using a sine wave.
-        for (int i = 0; i < fanTransforms.Count; i++)
-        {
-            Transform fanTransform = fanTransforms[i];
-            float fanInitialY = fanInitialYPositions[i];
-            float newY = fanInitialY + Mathf.Sin(Time.time * speed) * maxDistance;
+        {// Calculate the new Y positions for each fan using a sine wave.
+            for (int i = 0; i < fanTransforms.Count; i++)
+            {
+                Transform fanTransform = fanTransforms[i];
+                if (fanTransform == null)
+                    continue;
+                float fanInitialY = fanInitialYPositions[i];
+                float newY = fanInitialY + Mathf.Sin(Time.time * speed) * maxDistance;
 
-            // Set the fan's position to the new Y position.
-            fanTransform.position = new Vector3(fanTransform.position.x, newY, fanTransform.position.z);
+                // Set the fan's position to the new Y position.
+                try { fanTransform.position = new Vector3(fanTransform.position.x, newY, fanTransform.position.z); }
+                catch { }
+                
+            }
         }
+        
+
+        
+        
     }
 }
