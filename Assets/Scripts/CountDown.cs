@@ -26,11 +26,15 @@ public class CountDown : MonoBehaviour
 
     IEnumerator StartCountDown()
     {
+        three.SetActive(false);
         two.SetActive(false);
         one.SetActive(false);
         go.SetActive(false);
+
+        yield return new WaitForSeconds(3f);
+        PreviewCanvas.SetActive(false);
+        three.SetActive(true);
         yield return new WaitForSeconds(timeBetweenCounts);
-        
         three.SetActive(false);
         two.SetActive(true);
         yield return new WaitForSeconds(timeBetweenCounts);
@@ -39,9 +43,8 @@ public class CountDown : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenCounts);
         one.SetActive(false);
         go.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         go.SetActive(false);
-        PreviewCanvas.SetActive(false);
         movement.ReturnAll();
         if(!(optional == null))
         {
