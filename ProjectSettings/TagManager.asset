@@ -7,6 +7,8 @@ TagManager:
   - Obstacle
   - Net
   - Ending
+  - Dead
+  - Goal
   layers:
   - Default
   - TransparentFX

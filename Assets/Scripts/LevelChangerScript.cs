@@ -10,7 +10,8 @@ public class LevelChangerScript : MonoBehaviour
     {
         nextScene = level;
         if (!nextScene.Equals(""))
-            animator.SetTrigger("FadeOut");
+            SceneManager.LoadScene(nextScene);
+        //animator.SetTrigger("FadeOut");
     }
 
     public void OnFadeComplete()

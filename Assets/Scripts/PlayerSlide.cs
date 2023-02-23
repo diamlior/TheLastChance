@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerSlide : MonoBehaviour
 {
     public GameObject player;
-    public GameObject soccerPlayer;
+    float slidingDistance = 13f;
     public float speed;
     public string direction;
 
@@ -13,7 +13,7 @@ public class PlayerSlide : MonoBehaviour
 
     void Update()
     {
-        if (!shouldMove && soccerPlayer.transform.position.z < player.transform.position.z)
+        if (!shouldMove && Mathf.Abs(transform.position.z - player.transform.position.z) < slidingDistance)
         {
             shouldMove = true;
         }
