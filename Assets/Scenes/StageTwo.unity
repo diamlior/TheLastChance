@@ -2801,7 +2801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!1001 &67558886
 PrefabInstance:
@@ -5347,7 +5347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &131831194
 MonoBehaviour:
@@ -5493,7 +5493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &132315274
 MonoBehaviour:
@@ -6438,7 +6438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!1001 &153224860
 PrefabInstance:
@@ -10587,7 +10587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &260442681
 MonoBehaviour:
@@ -12094,7 +12094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &290637132
 MonoBehaviour:
@@ -14472,6 +14472,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
 --- !u!4 &366295508 stripped
@@ -14767,7 +14771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &374281528
 MonoBehaviour:
@@ -15242,6 +15246,10 @@ PrefabInstance:
     - target: {fileID: 3132827565773464112, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
@@ -17668,7 +17676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &450426961
 MonoBehaviour:
@@ -17748,6 +17756,10 @@ PrefabInstance:
     - target: {fileID: 3132827565773464112, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
@@ -20728,7 +20740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &514840925
 MonoBehaviour:
@@ -21279,7 +21291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!65 &530448507
 BoxCollider:
@@ -22962,7 +22974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &563999175
 MonoBehaviour:
@@ -23664,7 +23676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!65 &586831286
 BoxCollider:
@@ -24786,7 +24798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!1 &608848162
 GameObject:
@@ -27864,7 +27876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &688860915
 MonoBehaviour:
@@ -32813,7 +32825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &852812565
 MonoBehaviour:
@@ -33272,7 +33284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!1 &866299859 stripped
 GameObject:
@@ -36346,7 +36358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!1 &940793863
 GameObject:
@@ -38587,7 +38599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!65 &1002342999
 BoxCollider:
@@ -42705,6 +42717,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
 --- !u!1 &1083605600
@@ -43286,7 +43302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &1101824473
 MonoBehaviour:
@@ -43886,7 +43902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &1127650658
 MonoBehaviour:
@@ -46638,6 +46654,10 @@ PrefabInstance:
     - target: {fileID: 3132827565773464112, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
@@ -50129,7 +50149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &1304918201
 MonoBehaviour:
@@ -50768,6 +50788,10 @@ PrefabInstance:
     - target: {fileID: 3132827565773464112, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
@@ -52235,6 +52259,10 @@ PrefabInstance:
     - target: {fileID: 3132827565773464112, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
@@ -56965,7 +56993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!4 &1497189275 stripped
 Transform:
@@ -59358,6 +59386,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
 --- !u!1 &1549351825 stripped
@@ -59880,6 +59912,10 @@ PrefabInstance:
     - target: {fileID: 3132827565773464112, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
@@ -60576,7 +60612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!1001 &1594177990
 PrefabInstance:
@@ -63681,7 +63717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!1 &1680081508
 GameObject:
@@ -64660,7 +64696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!1001 &1707763912
 PrefabInstance:
@@ -65377,7 +65413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!1001 &1718978884
 PrefabInstance:
@@ -69792,7 +69828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &1856185627
 MonoBehaviour:
@@ -70019,7 +70055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &1858184854
 MonoBehaviour:
@@ -70164,7 +70200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &1861854241
 MonoBehaviour:
@@ -70518,6 +70554,10 @@ PrefabInstance:
     - target: {fileID: 3132827565773464112, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
@@ -74271,7 +74311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!65 &1958745766
 BoxCollider:
@@ -75261,6 +75301,10 @@ PrefabInstance:
     - target: {fileID: 3132827565773464112, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717273608916159026, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16f2a6a6321bb894c984093ed7270f45, type: 3}
@@ -77372,7 +77416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &2041032914
 MonoBehaviour:
@@ -78211,7 +78255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   isPaused: 0
 --- !u!114 &2064816644
 MonoBehaviour:
@@ -78403,7 +78447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643789485877955731, guid: 8ed00de3a96aaf641bcbe557dde9bb21, type: 3}
       propertyPath: speed
-      value: 13
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5643789485877955734, guid: 8ed00de3a96aaf641bcbe557dde9bb21, type: 3}
       propertyPath: m_TagString
