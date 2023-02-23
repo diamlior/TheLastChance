@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5444019, g: 0.50700164, b: 0.5242697, a: 1}
+  m_IndirectSpecularColor: {r: 0.5444154, g: 0.50701064, b: 0.5242721, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -197,6 +197,10 @@ PrefabInstance:
     - target: {fileID: 3472093475012023065, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Mass
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
@@ -643,7 +647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23121632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.004, y: 0.318, z: 1.01}
+  m_LocalPosition: {x: 0.004, y: 0.328, z: 1.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -666,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &23121635
 MonoBehaviour:
@@ -3436,7 +3440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &131831194
 MonoBehaviour:
@@ -3504,7 +3508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &132315274
 MonoBehaviour:
@@ -4329,6 +4333,10 @@ PrefabInstance:
     - target: {fileID: 3472093475012023065, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Mass
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
@@ -7097,7 +7105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &260442681
 MonoBehaviour:
@@ -9354,6 +9362,10 @@ PrefabInstance:
       value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
       value: 
       objectReference: {fileID: 720317093}
@@ -10019,7 +10031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &374281528
 MonoBehaviour:
@@ -12617,7 +12629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &450426961
 MonoBehaviour:
@@ -15014,7 +15026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &514840925
 MonoBehaviour:
@@ -15619,7 +15631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!65 &530448507
 BoxCollider:
@@ -16078,7 +16090,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544074852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16101,7 +16113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &544074855
 MonoBehaviour:
@@ -17429,7 +17441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!65 &586831286
 BoxCollider:
@@ -18801,7 +18813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633965729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 88.5}
+  m_LocalPosition: {x: 0, y: 0.25, z: 88.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18824,7 +18836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &633965732
 MonoBehaviour:
@@ -18926,6 +18938,10 @@ PrefabInstance:
     - target: {fileID: 3472093475012023065, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Mass
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
@@ -19770,7 +19786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &688860915
 MonoBehaviour:
@@ -20603,6 +20619,10 @@ PrefabInstance:
     - target: {fileID: 3472093475012023065, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Mass
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
@@ -21805,7 +21825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768081289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 44}
+  m_LocalPosition: {x: 0, y: 0.25, z: 44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21828,7 +21848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &768081292
 MonoBehaviour:
@@ -24185,6 +24205,10 @@ PrefabInstance:
     - target: {fileID: 3472093475012023065, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Mass
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
@@ -27597,7 +27621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!65 &1002342999
 BoxCollider:
@@ -30945,7 +30969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094987210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 110.5}
+  m_LocalPosition: {x: 0, y: 0.25, z: 110.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30968,7 +30992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1094987213
 MonoBehaviour:
@@ -31219,7 +31243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1101824473
 MonoBehaviour:
@@ -32131,7 +32155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1127650658
 MonoBehaviour:
@@ -35224,6 +35248,10 @@ PrefabInstance:
       value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
       value: 
       objectReference: {fileID: 2069429208}
@@ -36264,6 +36292,10 @@ PrefabInstance:
       value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
       value: 
       objectReference: {fileID: 1875650290}
@@ -36592,6 +36624,7 @@ GameObject:
   - component: {fileID: 1324455146}
   - component: {fileID: 1324455148}
   - component: {fileID: 1324455147}
+  - component: {fileID: 1324455150}
   m_Layer: 5
   m_Name: GoalmsgCanvas
   m_TagString: Untagged
@@ -36681,6 +36714,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1324455150
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324455145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa578616fa0d10442a45cd53f2e08103, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1324486671 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2189992736691662057, guid: 86fd8e596d1c632409cd5acbf0796045, type: 3}
@@ -38018,7 +38071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372565042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 66}
+  m_LocalPosition: {x: 0, y: 0.25, z: 66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38041,7 +38094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1372565045
 MonoBehaviour:
@@ -38210,7 +38263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384299517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.005, y: 0.952, z: 3.023}
+  m_LocalPosition: {x: 0.005, y: 0.96, z: 3.023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38233,7 +38286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1384299520
 MonoBehaviour:
@@ -38778,7 +38831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399069788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.005, y: 0.636, z: 2.02}
+  m_LocalPosition: {x: 0.005, y: 0.645, z: 2.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38801,7 +38854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1399069791
 MonoBehaviour:
@@ -41479,7 +41532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!4 &1497189275 stripped
 Transform:
@@ -45540,7 +45593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621773550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.008, y: 0.158, z: 0.504}
+  m_LocalPosition: {x: 0.008, y: 0.168, z: 0.504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45563,7 +45616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1621773553
 MonoBehaviour:
@@ -46028,6 +46081,10 @@ PrefabInstance:
       value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
       value: 
       objectReference: {fileID: 1838800188}
@@ -46466,7 +46523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646809100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.005, y: 0.792, z: 2.513}
+  m_LocalPosition: {x: 0.005, y: 0.8, z: 2.513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -46489,7 +46546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1646809103
 MonoBehaviour:
@@ -47687,6 +47744,10 @@ PrefabInstance:
     - target: {fileID: 3472093475012023065, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Mass
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
@@ -49306,6 +49367,10 @@ PrefabInstance:
       value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
       value: 
       objectReference: {fileID: 1719440803}
@@ -49594,7 +49659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!1001 &1718418011
 PrefabInstance:
@@ -51026,7 +51091,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764905040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.005, y: 0.472, z: 1.501}
+  m_LocalPosition: {x: 0.005, y: 0.48, z: 1.501}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51049,7 +51114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1764905043
 MonoBehaviour:
@@ -53538,7 +53603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1856185627
 MonoBehaviour:
@@ -53686,7 +53751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1858184854
 MonoBehaviour:
@@ -53826,7 +53891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1861854241
 MonoBehaviour:
@@ -54223,6 +54288,7 @@ MonoBehaviour:
   target: {fileID: 1716746101}
   forceUI: {fileID: 1283042086}
   Gauage: {fileID: 1283042084}
+  GoalCanvas: {fileID: 1324455145}
   didScore: 0
 --- !u!54 &1873114493
 Rigidbody:
@@ -55276,7 +55342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897742955}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 132.5}
+  m_LocalPosition: {x: 0, y: 0.25, z: 132.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55299,7 +55365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1897742958
 MonoBehaviour:
@@ -55475,7 +55541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904718672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 22}
+  m_LocalPosition: {x: 0, y: 0.25, z: 22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55498,7 +55564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &1904718675
 MonoBehaviour:
@@ -56697,7 +56763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!65 &1958745766
 BoxCollider:
@@ -57154,6 +57220,10 @@ PrefabInstance:
     - target: {fileID: 3472093475012023065, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Mass
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: speed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5594759675188527587, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: obstacle
@@ -58278,7 +58348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003839080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58301,7 +58371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &2003839083
 MonoBehaviour:
@@ -59260,7 +59330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &2041032914
 MonoBehaviour:
@@ -59795,7 +59865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 8
   isPaused: 0
 --- !u!114 &2064816644
 MonoBehaviour:
@@ -60013,7 +60083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643789485877955731, guid: 8ed00de3a96aaf641bcbe557dde9bb21, type: 3}
       propertyPath: speed
-      value: 13
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5643789485877955734, guid: 8ed00de3a96aaf641bcbe557dde9bb21, type: 3}
       propertyPath: m_TagString
@@ -61786,7 +61856,7 @@ RectTransform:
   m_GameObject: {fileID: 2138020246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1324455149}
@@ -61794,7 +61864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.649, y: 117.843}
+  m_AnchoredPosition: {x: -6, y: 11}
   m_SizeDelta: {x: 245.092, y: 94.938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2138020248
@@ -61837,7 +61907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Goal!!
+  m_text: GOAL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -61864,13 +61934,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 150
+  m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 3
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -61900,7 +61970,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -151.86237, y: 0, z: -168.45245, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

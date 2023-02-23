@@ -28,6 +28,7 @@ public class Movement : MonoBehaviour
     public Transform target;
     public Slider forceUI;
     public GameObject Gauage;
+    public GameObject GoalCanvas;
     GameObject goalObject;
     public bool didScore = false;
     Boolean backToBase;
@@ -58,6 +59,7 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         animator.enabled = isEnabled;
+        /*
         if (didScore)
         {
             float transitionSpeed = 20f;
@@ -70,6 +72,7 @@ public class Movement : MonoBehaviour
             }
                 
         }
+        */
         if (!isEnabled)
             return;
         if (Input.GetKey(KeyCode.RightArrow) && !movingRight && currentX <= startingX && !isShoot)
@@ -140,10 +143,12 @@ public class Movement : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(Shoot * Force + new Vector3(0, 3f, 0), ForceMode.Impulse);
         
     }
-    IEnumerator PauseForThreeSeconds()
+    IEnumerator PauseTwoSecExecuteGoalSwitch()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         Debug.Log("Two seconds have passed!");
+
+        SceneSwitcher();
     }
     IEnumerator Wait()
     {
@@ -180,12 +185,13 @@ public class Movement : MonoBehaviour
         string collider = collision.collider.name;
         if (collider != "Floor")
         {
-            if (didScore && backToBase)
-            {
+            //if (didScore && backToBase)
+                if (didScore)
+                {
                 Debug.Log("OnCollision did score is true");
-                SceneSwitcher();
+                
             }
-            if (collider.Equals("EndingBlock") && backToBase)
+            else if (collider.Equals("EndingBlock") && backToBase)
             {
                 SceneSwitcher();
             }
@@ -193,7 +199,7 @@ public class Movement : MonoBehaviour
             {
                 if (!isPenaltyMode && !didScore)
                 {
-                    Debug.Log("You are dead!");
+                    Debug.Log("You are dead 1st!");
                     FailedScreen.SetActive(true);
                     pauseButton.SetActive(false);
                     PauseAll();
@@ -203,10 +209,10 @@ public class Movement : MonoBehaviour
                 }
                 else
                 {
-                    PauseForThreeSeconds();
+                    //PauseForThreeSeconds();
                     if (!didScore)
                     {
-                        Debug.Log("You are dead!");
+                        Debug.Log("You are dead! 2nd");
                         FailedScreen.SetActive(true);
                         pauseButton.SetActive(false);
                         PauseAll();
@@ -228,13 +234,16 @@ public class Movement : MonoBehaviour
         }
         if (other.gameObject.name == "GoalBlock")
         {
-                Debug.Log(other.name + " Triggered");
-                didScore = true;
-                goalObject.SetActive(false);
-            }
-        if (other.gameObject.name == "Borders")
+            Debug.Log(other.name + " Triggered");
+            GoalCanvas.SetActive(true);
+            PauseAllNotTotal();
+            StartCoroutine(PauseTwoSecExecuteGoalSwitch());
+            didScore = true;
+            //goalObject.SetActive(false);
+        }
+        if (other.gameObject.name == "BordersDown")
         {
-            Debug.Log("You are dead!");
+            Debug.Log("You are dead! down border");
             FailedScreen.SetActive(true);
             pauseButton.SetActive(false);
             PauseAll();
@@ -298,6 +307,28 @@ public class Movement : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezePosition;
     }
 
+    public void PauseAllNotTotal()
+    {
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        try
+        {
+            foreach (GameObject obs in obstacles)
+            {
+                Obstacle obstacle = obs.GetComponent<Obstacle>();
+                if (obstacle != null)
+                    obstacle.PauseObject();
+                else
+                    Debug.Log(obs.name);
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+        }
+
+        isEnabled = false;
+        //rb.constraints = RigidbodyConstraints.FreezePosition;
+    }
     public void ReturnAll()
     {
 
