@@ -259,7 +259,7 @@ public class Movement : MonoBehaviour
         switch (sceneName)
         {
             case "Tutorial":
-                nextScene = "StageOne";
+                nextScene = "MainMenu";
                 break;
             case "StageOne":
                 nextScene = "StageTwo";
