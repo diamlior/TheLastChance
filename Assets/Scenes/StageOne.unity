@@ -135,6 +135,10 @@ PrefabInstance:
       value: SoccerPlayerGreen (6)
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -623,6 +627,7 @@ GameObject:
   - component: {fileID: 23121633}
   - component: {fileID: 23121634}
   - component: {fileID: 23121635}
+  - component: {fileID: 23121636}
   m_Layer: 0
   m_Name: Sector (2)
   m_TagString: Obstacle
@@ -675,7 +680,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &23121636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23121632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!1001 &24680843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3376,6 +3394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 131831192}
   - component: {fileID: 131831193}
+  - component: {fileID: 131831194}
   m_Layer: 0
   m_Name: StadiumL (3)
   m_TagString: Obstacle
@@ -3419,6 +3438,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &131831194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131831191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &132315271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,6 +3460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 132315272}
   - component: {fileID: 132315273}
+  - component: {fileID: 132315274}
   m_Layer: 0
   m_Name: StadiumR (5)
   m_TagString: Obstacle
@@ -3474,6 +3506,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &132315274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132315271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &133456465
 GameObject:
   m_ObjectHideFlags: 0
@@ -4221,6 +4265,10 @@ PrefabInstance:
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Name
       value: SoccerPlayerGreen (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
@@ -5749,7 +5797,7 @@ GameObject:
   - component: {fileID: 215732372}
   m_Layer: 0
   m_Name: GoalObjects
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7007,6 +7055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260442679}
   - component: {fileID: 260442680}
+  - component: {fileID: 260442681}
   m_Layer: 0
   m_Name: StadiumR (2)
   m_TagString: Obstacle
@@ -7050,6 +7099,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &260442681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260442678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &262698650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9223,6 +9284,10 @@ PrefabInstance:
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Name
       value: SoccerPlayerGreen (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
@@ -12509,6 +12574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450426959}
   - component: {fileID: 450426960}
+  - component: {fileID: 450426961}
   m_Layer: 0
   m_Name: StadiumR (3)
   m_TagString: Obstacle
@@ -12553,6 +12619,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &450426961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450426958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &453883733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1249877605030705412, guid: 5bacb17e45ba9c749b6141908f68f388, type: 3}
@@ -14894,6 +14972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 514840923}
   - component: {fileID: 514840924}
+  - component: {fileID: 514840925}
   m_Layer: 0
   m_Name: StadiumR
   m_TagString: Obstacle
@@ -14937,6 +15016,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &514840925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514840922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &520402793
 GameObject:
   m_ObjectHideFlags: 0
@@ -15971,6 +16062,7 @@ GameObject:
   - component: {fileID: 544074853}
   - component: {fileID: 544074854}
   - component: {fileID: 544074855}
+  - component: {fileID: 544074856}
   m_Layer: 0
   m_Name: Sector
   m_TagString: Obstacle
@@ -16023,7 +16115,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &544074856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544074852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!1 &544982224
 GameObject:
   m_ObjectHideFlags: 0
@@ -17282,6 +17387,7 @@ GameObject:
   - component: {fileID: 586831284}
   - component: {fileID: 586831285}
   - component: {fileID: 586831286}
+  - component: {fileID: 586831287}
   m_Layer: 0
   m_Name: StadiumL
   m_TagString: Obstacle
@@ -17338,6 +17444,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &586831287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586831283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &590977081
 GameObject:
   m_ObjectHideFlags: 0
@@ -18667,6 +18785,7 @@ GameObject:
   - component: {fileID: 633965730}
   - component: {fileID: 633965731}
   - component: {fileID: 633965732}
+  - component: {fileID: 633965733}
   m_Layer: 0
   m_Name: Sector (4)
   m_TagString: Obstacle
@@ -18719,7 +18838,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &633965733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633965729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!1001 &636349811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18730,6 +18862,10 @@ PrefabInstance:
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Name
       value: SoccerPlayerGreen (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
@@ -19592,6 +19728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 688860913}
   - component: {fileID: 688860914}
+  - component: {fileID: 688860915}
   m_Layer: 0
   m_Name: StadiumL (4)
   m_TagString: Obstacle
@@ -19635,6 +19772,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &688860915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688860912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &691262676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1249877605030705412, guid: 5bacb17e45ba9c749b6141908f68f388, type: 3}
@@ -20390,6 +20539,10 @@ PrefabInstance:
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Name
       value: SoccerPlayerGreen (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
@@ -21636,6 +21789,7 @@ GameObject:
   - component: {fileID: 768081290}
   - component: {fileID: 768081291}
   - component: {fileID: 768081292}
+  - component: {fileID: 768081293}
   m_Layer: 0
   m_Name: Sector (2)
   m_TagString: Obstacle
@@ -21688,7 +21842,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &768081293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768081289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!1001 &768528302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23952,6 +24119,10 @@ PrefabInstance:
       value: SoccerPlayerGreen (7)
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -26129,7 +26300,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 938755626}
-  - component: {fileID: 938755627}
   m_Layer: 0
   m_Name: CrowdArgentina
   m_TagString: Untagged
@@ -26159,20 +26329,6 @@ Transform:
   m_Father: {fileID: 1782202898}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &938755627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938755625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDistance: 0.3
-  speed: 3
 --- !u!1001 &939713621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27514,7 +27670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002342996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 422.02, y: 1.47, z: 186.63}
+  m_LocalPosition: {x: 422.02, y: 1.47, z: 186.33}
   m_LocalScale: {x: 5.86, y: 4.62, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30773,6 +30929,7 @@ GameObject:
   - component: {fileID: 1094987211}
   - component: {fileID: 1094987212}
   - component: {fileID: 1094987213}
+  - component: {fileID: 1094987214}
   m_Layer: 0
   m_Name: Sector (5)
   m_TagString: Obstacle
@@ -30825,7 +30982,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &1094987214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094987210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!1001 &1096708215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31007,6 +31177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1101824471}
   - component: {fileID: 1101824472}
+  - component: {fileID: 1101824473}
   m_Layer: 0
   m_Name: StadiumL (6)
   m_TagString: Obstacle
@@ -31050,6 +31221,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &1101824473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101824470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1103466807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1254091542082090128, guid: 580cb0d5de7fae74cad3ee240378c8bc, type: 3}
@@ -31906,6 +32089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127650656}
   - component: {fileID: 1127650657}
+  - component: {fileID: 1127650658}
   m_Layer: 0
   m_Name: StadiumL (5)
   m_TagString: Obstacle
@@ -31949,6 +32133,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &1127650658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127650655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1134369922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3300799546944532708, guid: acff6914a8c33d54aa80b4dd04aaca48, type: 3}
@@ -34964,6 +35160,10 @@ PrefabInstance:
       value: SoccerPlayerGreen (10)
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -35994,6 +36194,10 @@ PrefabInstance:
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Name
       value: SoccerPlayerGreen (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
@@ -37798,6 +38002,7 @@ GameObject:
   - component: {fileID: 1372565043}
   - component: {fileID: 1372565044}
   - component: {fileID: 1372565045}
+  - component: {fileID: 1372565046}
   m_Layer: 0
   m_Name: Sector (3)
   m_TagString: Obstacle
@@ -37850,7 +38055,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &1372565046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372565042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!4 &1373503986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5107485099718359295, guid: acff6914a8c33d54aa80b4dd04aaca48, type: 3}
@@ -37976,6 +38194,7 @@ GameObject:
   - component: {fileID: 1384299518}
   - component: {fileID: 1384299519}
   - component: {fileID: 1384299520}
+  - component: {fileID: 1384299521}
   m_Layer: 0
   m_Name: Sector (6)
   m_TagString: Obstacle
@@ -38028,7 +38247,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &1384299521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384299517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!1 &1384619699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8549515154628029108, guid: d45754deb85896d40812713cb63dc6d1, type: 3}
@@ -38282,7 +38514,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1393652437}
-  - component: {fileID: 1393652438}
   m_Layer: 0
   m_Name: CrowdAustralia
   m_TagString: Untagged
@@ -38312,20 +38543,6 @@ Transform:
   m_Father: {fileID: 1782202898}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1393652438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393652435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDistance: 0.3
-  speed: 5
 --- !u!1001 &1395234990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38545,6 +38762,7 @@ GameObject:
   - component: {fileID: 1399069789}
   - component: {fileID: 1399069790}
   - component: {fileID: 1399069791}
+  - component: {fileID: 1399069792}
   m_Layer: 0
   m_Name: Sector (4)
   m_TagString: Obstacle
@@ -38597,7 +38815,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &1399069792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399069788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!1 &1400821780
 GameObject:
   m_ObjectHideFlags: 0
@@ -44187,8 +44418,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594089109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1000061, y: -2.3999999, z: 10.507442}
-  m_LocalScale: {x: 6, y: 0.12, z: 1000}
+  m_LocalPosition: {x: -0.1000061, y: -2.4, z: 157.5204}
+  m_LocalScale: {x: 6, y: 0.12, z: 343.2418}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 49801366}
@@ -45293,6 +45524,7 @@ GameObject:
   - component: {fileID: 1621773551}
   - component: {fileID: 1621773552}
   - component: {fileID: 1621773553}
+  - component: {fileID: 1621773554}
   m_Layer: 0
   m_Name: Sector (1)
   m_TagString: Obstacle
@@ -45345,7 +45577,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &1621773554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621773550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!4 &1622510231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5107485099718359295, guid: b5a85490c717c88408f046479f4e1b8a, type: 3}
@@ -45717,6 +45962,10 @@ PrefabInstance:
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Name
       value: SoccerPlayerGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
@@ -46201,6 +46450,7 @@ GameObject:
   - component: {fileID: 1646809101}
   - component: {fileID: 1646809102}
   - component: {fileID: 1646809103}
+  - component: {fileID: 1646809104}
   m_Layer: 0
   m_Name: Sector (5)
   m_TagString: Obstacle
@@ -46253,7 +46503,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &1646809104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646809100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!4 &1648565154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1254091542082090128, guid: 580cb0d5de7fae74cad3ee240378c8bc, type: 3}
@@ -47360,6 +47623,10 @@ PrefabInstance:
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Name
       value: SoccerPlayerGreen (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
@@ -48973,6 +49240,10 @@ PrefabInstance:
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_Name
       value: SoccerPlayerGreen (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
@@ -50739,6 +51010,7 @@ GameObject:
   - component: {fileID: 1764905041}
   - component: {fileID: 1764905042}
   - component: {fileID: 1764905043}
+  - component: {fileID: 1764905044}
   m_Layer: 0
   m_Name: Sector (3)
   m_TagString: Obstacle
@@ -50791,7 +51063,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &1764905044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764905040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!4 &1765585021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5107485099718359295, guid: acff6914a8c33d54aa80b4dd04aaca48, type: 3}
@@ -53209,6 +53494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1856185625}
   - component: {fileID: 1856185626}
+  - component: {fileID: 1856185627}
   m_Layer: 0
   m_Name: StadiumR (4)
   m_TagString: Obstacle
@@ -53254,6 +53540,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &1856185627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856185624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1856526419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53346,6 +53644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858184852}
   - component: {fileID: 1858184853}
+  - component: {fileID: 1858184854}
   m_Layer: 0
   m_Name: StadiumL (1)
   m_TagString: Obstacle
@@ -53389,6 +53688,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &1858184854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858184851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1859180437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53473,6 +53784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1861854239}
   - component: {fileID: 1861854240}
+  - component: {fileID: 1861854241}
   m_Layer: 0
   m_Name: StadiumL (2)
   m_TagString: Obstacle
@@ -53516,6 +53828,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &1861854241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861854238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865466146
 GameObject:
   m_ObjectHideFlags: 0
@@ -53867,7 +54191,7 @@ GameObject:
   - component: {fileID: 1873114498}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54936,6 +55260,7 @@ GameObject:
   - component: {fileID: 1897742956}
   - component: {fileID: 1897742957}
   - component: {fileID: 1897742958}
+  - component: {fileID: 1897742959}
   m_Layer: 0
   m_Name: Sector (6)
   m_TagString: Obstacle
@@ -54988,7 +55313,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &1897742959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897742955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!1001 &1900635228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55121,6 +55459,7 @@ GameObject:
   - component: {fileID: 1904718673}
   - component: {fileID: 1904718674}
   - component: {fileID: 1904718675}
+  - component: {fileID: 1904718676}
   m_Layer: 0
   m_Name: Sector (1)
   m_TagString: Obstacle
@@ -55173,7 +55512,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &1904718676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904718672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!1 &1910431024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1249877605030705412, guid: 5bacb17e45ba9c749b6141908f68f388, type: 3}
@@ -56740,6 +57092,10 @@ PrefabInstance:
       value: SoccerPlayerGreen (8)
       objectReference: {fileID: 0}
     - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 631475601059415042, guid: 23f09831fdb8240468c1d4f317dbdd9f, type: 3}
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
@@ -57906,6 +58262,7 @@ GameObject:
   - component: {fileID: 2003839081}
   - component: {fileID: 2003839082}
   - component: {fileID: 2003839083}
+  - component: {fileID: 2003839084}
   m_Layer: 0
   m_Name: Sector
   m_TagString: Obstacle
@@ -57958,7 +58315,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a64ffb11852de246ab74021e7d5567b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1873114491}
+--- !u!114 &2003839084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003839080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7e89858806fc439c88df7d5f1f0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 0.3
+  speed: 5
 --- !u!4 &2007348196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1254091542082090128, guid: 580cb0d5de7fae74cad3ee240378c8bc, type: 3}
@@ -58848,6 +59218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2041032912}
   - component: {fileID: 2041032913}
+  - component: {fileID: 2041032914}
   m_Layer: 0
   m_Name: StadiumR (1)
   m_TagString: Obstacle
@@ -58891,6 +59262,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &2041032914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041032911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2041525889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59368,6 +59751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2064816642}
   - component: {fileID: 2064816643}
+  - component: {fileID: 2064816644}
   m_Layer: 0
   m_Name: StadiumR (6)
   m_TagString: Obstacle
@@ -59413,6 +59797,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   isPaused: 0
+--- !u!114 &2064816644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064816641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c8761ec703d914c9394f828fd94ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2065101841
 GameObject:
   m_ObjectHideFlags: 0

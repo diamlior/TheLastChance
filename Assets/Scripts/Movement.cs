@@ -17,8 +17,8 @@ public class Movement : MonoBehaviour
     public bool isGrounded = true, stopJumped = false, isPenaltyMode = false, isShoot = false;
     bool movingLeft = false, movingRight = false;
     float currentX, targetX, startingX;
+    
     string sceneName;
-    Transform transform;
     Animator animator;
     private LevelChangerScript levelChangeScript;
     public bool isEnabled = true;
@@ -28,25 +28,27 @@ public class Movement : MonoBehaviour
     public Transform target;
     public Slider forceUI;
     public GameObject Gauage;
+    GameObject goalObject;
     public bool didScore = false;
-    Vector3 StartPos;
+    Boolean backToBase;
+    Vector3 startPos;
 
     Vector3 GoalPos;
 
-    bool didShoot = false;
 
     //public Canvas goalMsgCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        transform = player.GetComponent<Transform>();
+        goalObject = GameObject.FindGameObjectWithTag("Goal");
+        backToBase = false;
         startingX = transform.position.x;
         currentX = (float)System.Math.Round(transform.position.x);
         sceneName = SceneManager.GetActiveScene().name;
         levelChangeScript = GameObject.Find("LevelChanger").GetComponent<LevelChangerScript>();
         animator = player.GetComponent<Animator>();
+        startPos = transform.position;
     }
     void OnCollisionStay()
     {
@@ -56,6 +58,18 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         animator.enabled = isEnabled;
+        if (didScore)
+        {
+            float transitionSpeed = 20f;
+            transform.position = Vector3.Lerp(transform.position, startPos, Time.deltaTime * transitionSpeed);
+            if (Vector3.Distance(transform.position,startPos) < 0.5f)
+            {
+                backToBase = true;
+                transform.position = startPos;
+                SceneSwitcher();
+            }
+                
+        }
         if (!isEnabled)
             return;
         if (Input.GetKey(KeyCode.RightArrow) && !movingRight && currentX <= startingX && !isShoot)
@@ -133,7 +147,6 @@ public class Movement : MonoBehaviour
     }
     IEnumerator Wait()
     {
-        didShoot = true;
         shoot();
         yield return new WaitForSeconds(1.5f);
         yield return new WaitForSeconds(1f);
@@ -167,18 +180,18 @@ public class Movement : MonoBehaviour
         string collider = collision.collider.name;
         if (collider != "Floor")
         {
-            if (didScore)
+            if (didScore && backToBase)
             {
                 Debug.Log("OnCollision did score is true");
                 SceneSwitcher();
             }
-            if (collider.Equals("EndingBlock"))
+            if (collider.Equals("EndingBlock") && backToBase)
             {
                 SceneSwitcher();
             }
             else
             {
-                if (!isPenaltyMode)
+                if (!isPenaltyMode && !didScore)
                 {
                     Debug.Log("You are dead!");
                     FailedScreen.SetActive(true);
@@ -217,6 +230,7 @@ public class Movement : MonoBehaviour
         {
                 Debug.Log(other.name + " Triggered");
                 didScore = true;
+                goalObject.SetActive(false);
             }
         if (other.gameObject.name == "Borders")
         {

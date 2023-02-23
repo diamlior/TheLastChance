@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnableByDistance : MonoBehaviour
 {
     GameObject[] children;
-    public GameObject player;
+    GameObject player;
     GameObject firstFan;
     GameObject lastFan;
     float minDistance = 50f;
@@ -13,6 +13,12 @@ public class EnableByDistance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            Debug.Log("Player GameObject has no tag 'Player'!!");
+            gameObject.SetActive(false);
+        }
         firstFan = transform.GetChild(0).GetChild(0).gameObject;
         lastFan = transform.GetChild(3).GetChild(3).gameObject;
         children = new GameObject[transform.childCount];
