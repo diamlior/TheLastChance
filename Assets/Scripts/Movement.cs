@@ -29,6 +29,7 @@ public class Movement : MonoBehaviour
     public Slider forceUI;
     public GameObject Gauage;
     public GameObject GoalCanvas;
+    public GameObject GoalAndExtraLifeCanvas;
     GameObject goalObject;
     public bool didScore = false;
     bool shouldStartPenaltyMode = false;
@@ -193,8 +194,8 @@ public class Movement : MonoBehaviour
         if (collider != "Floor")
         {
             //if (didScore && backToBase)
-                if (didScore)
-                {
+            if (didScore)
+            {
                 Debug.Log("OnCollision did score is true");
                 
             }
@@ -235,17 +236,31 @@ public class Movement : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        if (didScore)
+            return;
         if (other.gameObject.name == "EndRunBlock")
         {
             shouldStartPenaltyMode = true;
         }
-        if (other.gameObject.name == "GoalBlock")
+        if (other.gameObject.name == "GoalBlock" || other.gameObject.name == "GoalBlockExtraLife")
         {
+            
+            if (other.gameObject.name == "GoalBlockExtraLife")
+            {
+                Debug.Log("Hit Target");
+                GoalAndExtraLifeCanvas.SetActive(true);
+                didScore = true;
+            }
+            else
+            {
+                Debug.Log("Hit Goal");
+                GoalCanvas.SetActive(true);
+                didScore = true;
+            }
             Debug.Log(other.name + " Triggered");
-            GoalCanvas.SetActive(true);
             PauseAllNotTotal();
             StartCoroutine(PauseTwoSecExecuteGoalSwitch());
-            didScore = true;
+            
             //goalObject.SetActive(false);
         }
         if (other.gameObject.name == "BordersDown")
