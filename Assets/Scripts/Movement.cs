@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
     public GameObject GoalCanvas;
     GameObject goalObject;
     public bool didScore = false;
+    bool shouldStartPenaltyMode = false;
     Boolean backToBase;
     Vector3 startPos;
 
@@ -75,6 +76,12 @@ public class Movement : MonoBehaviour
         */
         if (!isEnabled)
             return;
+        if (isGrounded && shouldStartPenaltyMode && !Input.GetKey(KeyCode.Space))
+        {
+            shouldStartPenaltyMode = false;
+            isPenaltyMode = true;
+            PenaltyMode();
+        }
         if (Input.GetKey(KeyCode.RightArrow) && !movingRight && currentX <= startingX && !isShoot)
         {
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
@@ -230,7 +237,7 @@ public class Movement : MonoBehaviour
     {
         if (other.gameObject.name == "EndRunBlock")
         {
-            PenaltyMode();
+            shouldStartPenaltyMode = true;
         }
         if (other.gameObject.name == "GoalBlock")
         {
@@ -278,9 +285,7 @@ public class Movement : MonoBehaviour
 
     public void PenaltyMode()
     {
-        isPenaltyMode = true;
         Gauage.SetActive(true);
-        
     }
 
     public void PauseAll()
