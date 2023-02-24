@@ -12,9 +12,10 @@ public class Movement : MonoBehaviour
     public Rigidbody rb;
     public GameObject FailedScreen;
     public GameObject pauseButton;
+    public AudioSource coinFX;
     public float jumpForce = 5;
     public float speed = 100;
-    public bool isGrounded = true, stopJumped = false, isPenaltyMode = false, isShoot = false;
+    private bool isGrounded = true, stopJumped = false, isPenaltyMode = false, isShoot = false;
     bool movingLeft = false, movingRight = false;
     float currentX, targetX, startingX;
     
@@ -263,7 +264,7 @@ public class Movement : MonoBehaviour
             
             //goalObject.SetActive(false);
         }
-        if (other.gameObject.name == "BordersDown")
+        else if (other.gameObject.name == "BordersDown")
         {
             Debug.Log("You are dead! down border");
             FailedScreen.SetActive(true);
@@ -272,7 +273,20 @@ public class Movement : MonoBehaviour
             rb.constraints = RigidbodyConstraints.None;
             rb.AddForce(new Vector3(1, 1, -1) * 100);
         }
-        
+        /*
+        else
+        {
+            Transform otherParent = other.gameObject.GetComponentInParent<Transform>();
+            if (otherParent != null)
+            {
+                if (otherParent.name.Equals("Coins"))
+                {
+                    coinFX.Play();
+                    other.gameObject.SetActive(false);
+                }
+            }
+        } 
+        */
     }
 
     void SceneSwitcher()
