@@ -19,7 +19,8 @@ public class Movement : MonoBehaviour
     private bool isGrounded = true, stopJumped = false, isPenaltyMode = false, isShoot = false;
     bool movingLeft = false, movingRight = false;
     float currentX, targetX, startingX;
-    
+    private GameObject[] obstacles1;
+
     string sceneName;
     Animator animator;
     private LevelChangerScript levelChangeScript;
@@ -280,7 +281,8 @@ public class Movement : MonoBehaviour
             return;
         if(other.gameObject.name == "StartBlock")
         {
-            speed = 8;
+            Debug.Log("Hit StartBlock");
+            SetSpeed8();
         }
         else if (other.gameObject.name == "EndRunBlock")
         {
@@ -404,6 +406,23 @@ public class Movement : MonoBehaviour
     
     public void SetSpeed100()
     {
-        speed = 100;
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        foreach (GameObject obs in obstacles)
+        {
+            Obstacle obstacle = obs.GetComponent<Obstacle>();
+            if (obstacle != null)
+                obstacle.speed = 80;
+        }
+    }
+
+    public void SetSpeed8()
+    {
+        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        foreach (GameObject obs in obstacles)
+        {
+            Obstacle obstacle = obs.GetComponent<Obstacle>();
+            if (obstacle != null)
+                obstacle.speed = 8;
+        }
     }
 }
