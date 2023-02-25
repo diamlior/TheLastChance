@@ -29,6 +29,11 @@ public class StaticData {
         life = val;
     }
 
+    public static void setCoins(int val)
+    {
+        coins = val;
+    }
+
     public static void resetStats()
     {
         life = 3;

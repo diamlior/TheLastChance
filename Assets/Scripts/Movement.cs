@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
     Boolean backToBase;
     Vector3 startPos;
     int initialLife;
+    int initialCoins;
     Vector3 GoalPos;
 
 
@@ -45,6 +46,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        initialCoins = StaticData.getCoins();
         goalObject = GameObject.FindGameObjectWithTag("Goal");
         backToBase = false;
         startingX = transform.position.x;
@@ -229,11 +231,20 @@ public class Movement : MonoBehaviour
         {
             FailedScreen.transform.GetChild(0).gameObject.SetActive(false);
         }
+        else
+        {
+            resetCoins();
+        }
         pauseButton.SetActive(false);
         PauseAll();
         rb.constraints = RigidbodyConstraints.None;
         rb.AddForce(new Vector3(1, 1, -1) * 100);
 
+    }
+
+    public void resetCoins()
+    {
+        StaticData.setCoins(initialCoins);
     }
     void OnTriggerEnter(Collider other)
     {
