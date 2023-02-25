@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5444154, g: 0.50701064, b: 0.5242721, a: 1}
+  m_IndirectSpecularColor: {r: 0.5444019, g: 0.50700164, b: 0.5242697, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8653,7 +8653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3188040162405285312, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 83.24
+      value: 117
       objectReference: {fileID: 0}
     - target: {fileID: 3188040162405285313, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_Texture
@@ -8720,16 +8720,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3188040163201432218, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -201
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188040163201432218, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 144
+      value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188040163201432219, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
+      propertyPath: m_text
+      value: FAILED
       objectReference: {fileID: 0}
     - target: {fileID: 3188040163201432219, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_fontSize
-      value: 50
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 3188040163201432219, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_fontSizeBase
-      value: 50
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 3188040163338921045, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -8822,6 +8830,10 @@ PrefabInstance:
     - target: {fileID: 3188040163694614360, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188040164301131303, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3188040164452511456, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_Pivot.x
@@ -11204,7 +11216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &375728489
 RectTransform:
   m_ObjectHideFlags: 0

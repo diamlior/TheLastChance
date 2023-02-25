@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -39,6 +40,7 @@ public class Movement : MonoBehaviour
     int initialLife;
     int initialCoins;
     Vector3 GoalPos;
+    bool failed;
 
 
     //public Canvas goalMsgCanvas;
@@ -56,6 +58,7 @@ public class Movement : MonoBehaviour
         animator = player.GetComponent<Animator>();
         startPos = transform.position;
         initialLife = StaticData.getLife();
+        failed = false;
     }
     void OnCollisionStay()
     {
@@ -224,22 +227,47 @@ public class Movement : MonoBehaviour
 
     void failure()
     {
-        Debug.Log("You are dead!");
-        StaticData.setLife(initialLife - 1);
-        FailedScreen.SetActive(true);
-        if (StaticData.getLife() == 0)
+        if (!failed) // This is needed because failure can be triggered several times for the same round.
         {
-            FailedScreen.transform.GetChild(0).gameObject.SetActive(false);
-        }
-        else
-        {
-            resetCoins();
-        }
-        pauseButton.SetActive(false);
-        PauseAll();
-        rb.constraints = RigidbodyConstraints.None;
-        rb.AddForce(new Vector3(1, 1, -1) * 100);
+            failed = true;
+            Debug.Log("You are dead!");
+            StaticData.setLife(initialLife - 1);
+            string textOnFailedScreen = "";
+            FailedScreen.SetActive(true);
 
+            if (StaticData.getLife() == 0)
+            {
+                textOnFailedScreen += "YOU'RE OUT!";
+
+                FailedScreen.transform.GetChild(0).gameObject.SetActive(false);
+                int highscore = StaticData.getHighscore();
+                int coins = StaticData.getCoins();
+                if (coins > highscore)
+                {
+                    Debug.Log("Got into highscore");
+                    textOnFailedScreen += "\nWell done! New Highscore!";
+                    StaticData.setHighscore(coins);
+                    Debug.Log(textOnFailedScreen);
+                }
+                Debug.Log(textOnFailedScreen);
+            }
+            else
+            {
+                int life = StaticData.getLife();
+                if (life > 1)
+                    textOnFailedScreen = String.Format("FAILED!\nYou still have {0} tries left!", StaticData.getLife());
+                else
+                    textOnFailedScreen = "FAILED!\nYou still have 1 try left!";
+                resetCoins();
+            }
+            Debug.Log(textOnFailedScreen);
+            TMP_Text failText = FailedScreen.transform.GetChild(3).GetComponent<TMP_Text>();
+            failText.text = textOnFailedScreen;
+            pauseButton.SetActive(false);
+            PauseAll();
+            rb.constraints = RigidbodyConstraints.None;
+            rb.AddForce(new Vector3(1, 1, -1) * 100);
+        }
     }
 
     public void resetCoins()
