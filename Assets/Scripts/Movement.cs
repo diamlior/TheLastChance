@@ -126,8 +126,8 @@ public class Movement : MonoBehaviour
 
         else if (Input.GetKeyUp(KeyCode.Space) && isPenaltyMode && !isShoot) //shoot
         {
-            //shoot();
-            StartCoroutine(Wait());
+            shoot();
+            //StartCoroutine(Wait());
         }
 
 

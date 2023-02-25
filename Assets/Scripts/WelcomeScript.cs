@@ -8,10 +8,13 @@ public class WelcomeScript : MonoBehaviour
     public float timeBetweenCounts = 2f;
     public GameObject player;
     public GameObject Welcome, LastChance, Selected, Arrows, Space, Score, Aim, HoldSpace, GoodLuck, TutTextCanvas, pauseButton;
+    Movement movement;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Started");
+        movement = player.GetComponent<Movement>();
+        movement.PauseAll();
         StartCoroutine(StartText());
     }
 
