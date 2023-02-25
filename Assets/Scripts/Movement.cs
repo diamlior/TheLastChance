@@ -250,7 +250,11 @@ public class Movement : MonoBehaviour
     {
         if (didScore)
             return;
-        if (other.gameObject.name == "EndRunBlock")
+        if(other.gameObject.name == "StartBlock")
+        {
+            speed = 8;
+        }
+        else if (other.gameObject.name == "EndRunBlock")
         {
             shouldStartPenaltyMode = true;
         }
@@ -370,4 +374,8 @@ public class Movement : MonoBehaviour
         isEnabled = true;
     }
     
+    public void SetSpeed100()
+    {
+        speed = 100;
+    }
 }
