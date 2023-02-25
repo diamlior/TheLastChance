@@ -3,6 +3,7 @@ public class StaticData {
     public static float Vol = 0.5f;
     public static int coins = 0;
     public static int life = 3;
+    public static int highscore = 0;
     public static void setVol(float val)
     {
         if (val >= 0 && val <= 1)
@@ -38,6 +39,16 @@ public class StaticData {
     {
         life = 3;
         coins = 0;
+    }
+
+    public static void setHighscore(int val)
+    {
+        highscore = val;
+    }
+
+    public static int getHighscore()
+    {
+        return highscore;
     }
 
     public static int getLife() { return life; }

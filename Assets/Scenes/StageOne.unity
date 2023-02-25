@@ -8639,6 +8639,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3188040162405285312, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 283
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188040162405285312, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 107
+      objectReference: {fileID: 0}
     - target: {fileID: 3188040162503695574, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -8698,6 +8706,18 @@ PrefabInstance:
     - target: {fileID: 3188040163090700179, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188040163201432218, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -208
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188040163201432218, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188040163201432219, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
+      propertyPath: m_text
+      value: Failed!
       objectReference: {fileID: 0}
     - target: {fileID: 3188040163338921045, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -8790,6 +8810,10 @@ PrefabInstance:
     - target: {fileID: 3188040163694614360, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188040164301131303, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3188040164452511456, guid: 03a9cb2bb10213c418cb21e7a611d507, type: 3}
       propertyPath: m_Pivot.x
