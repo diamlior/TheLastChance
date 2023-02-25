@@ -122,6 +122,8 @@ public class Movement : MonoBehaviour
             //shoot();
             StartCoroutine(Wait());
         }
+
+
         else if (Input.GetKey(KeyCode.Space) && isGrounded && !isShoot)
         {
             if (!isPenaltyMode)
@@ -137,13 +139,13 @@ public class Movement : MonoBehaviour
             }
         }       
         
-        else if (!Input.GetKey(KeyCode.Space) && !isGrounded && !stopJumped && !isShoot)
+        /*else if (!Input.GetKey(KeyCode.Space) && !isGrounded && !stopJumped && !isShoot)
         {
             if (rb.velocity.y > 0)
                 rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             stopJumped = true;
         }
-        
+        */
     }
     void shoot()
     {
