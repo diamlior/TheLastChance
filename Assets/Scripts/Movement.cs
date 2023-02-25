@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
     bool shouldStartPenaltyMode = false;
     Boolean backToBase;
     Vector3 startPos;
-
+    int initialLife;
     Vector3 GoalPos;
 
 
@@ -53,6 +53,7 @@ public class Movement : MonoBehaviour
         levelChangeScript = GameObject.Find("LevelChanger").GetComponent<LevelChangerScript>();
         animator = player.GetComponent<Animator>();
         startPos = transform.position;
+        initialLife = StaticData.getLife();
     }
     void OnCollisionStay()
     {
@@ -139,13 +140,6 @@ public class Movement : MonoBehaviour
             }
         }       
         
-        /*else if (!Input.GetKey(KeyCode.Space) && !isGrounded && !stopJumped && !isShoot)
-        {
-            if (rb.velocity.y > 0)
-                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-            stopJumped = true;
-        }
-        */
     }
     void shoot()
     {
@@ -210,31 +204,35 @@ public class Movement : MonoBehaviour
             {
                 if (!isPenaltyMode && !didScore)
                 {
-                    Debug.Log("You are dead 1st!");
-                    FailedScreen.SetActive(true);
-                    pauseButton.SetActive(false);
-                    PauseAll();
-                    rb.constraints = RigidbodyConstraints.None;
-                    rb.AddForce(new Vector3(1, 1, -1) * 100);
-                    //levelChangeScript.FadeToLevel(sceneName);
+                    failure();
                 }
                 else
                 {
-                    //PauseForThreeSeconds();
                     if (!didScore)
                     {
-                        Debug.Log("You are dead! 2nd");
-                        FailedScreen.SetActive(true);
-                        pauseButton.SetActive(false);
-                        PauseAll();
-                        rb.constraints = RigidbodyConstraints.None;
-                        rb.AddForce(new Vector3(1, 1, -1) * 100);
+                        failure();
                     }
                 }
 
             }
 
         }
+
+    }
+
+    void failure()
+    {
+        Debug.Log("You are dead!");
+        StaticData.setLife(initialLife - 1);
+        FailedScreen.SetActive(true);
+        if (StaticData.getLife() == 0)
+        {
+            FailedScreen.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        pauseButton.SetActive(false);
+        PauseAll();
+        rb.constraints = RigidbodyConstraints.None;
+        rb.AddForce(new Vector3(1, 1, -1) * 100);
 
     }
     void OnTriggerEnter(Collider other)
@@ -245,13 +243,15 @@ public class Movement : MonoBehaviour
         {
             shouldStartPenaltyMode = true;
         }
-        if (other.gameObject.name == "GoalBlock" || other.gameObject.name == "GoalBlockExtraLife")
+        if (other.gameObject.name == "GoalBlock" || other.gameObject.name == "GoalTarget")
         {
             
-            if (other.gameObject.name == "GoalBlockExtraLife")
+            if (other.gameObject.name == "GoalTarget")
             {
+                other.gameObject.SetActive(false);
                 Debug.Log("Hit Target");
                 GoalAndExtraLifeCanvas.SetActive(true);
+                StaticData.setLife(initialLife + 1);
                 didScore = true;
             }
             else
@@ -268,32 +268,14 @@ public class Movement : MonoBehaviour
         }
         else if (other.gameObject.name == "BordersDown")
         {
-            Debug.Log("You are dead! down border");
-            FailedScreen.SetActive(true);
-            pauseButton.SetActive(false);
-            PauseAll();
-            rb.constraints = RigidbodyConstraints.None;
-            rb.AddForce(new Vector3(1, 1, -1) * 100);
+            failure();
         }
-        /*
-        else
-        {
-            Transform otherParent = other.gameObject.GetComponentInParent<Transform>();
-            if (otherParent != null)
-            {
-                if (otherParent.name.Equals("Coins"))
-                {
-                    coinFX.Play();
-                    other.gameObject.SetActive(false);
-                }
-            }
-        } 
-        */
+
     }
 
     void SceneSwitcher()
     {
-        string nextScene = "";
+        string nextScene = "";;
         switch (sceneName)
         {
             case "Tutorial":
