@@ -47,5 +47,6 @@ public class WelcomeScript : MonoBehaviour
         yield return new WaitForSeconds(3f);
         TutTextCanvas.SetActive(false);
         pauseButton.SetActive(true);
+        movement.ReturnAll();
     }
 }
