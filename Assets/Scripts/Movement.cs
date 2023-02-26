@@ -368,6 +368,12 @@ public class Movement : MonoBehaviour
             case "StageTwo":
                 nextScene = "MainMenu";
                 break;
+            case "StageThree":
+                nextScene = "StageFour";
+                break;
+            case "StageFour":
+                nextScene = "MainMenu";
+                break;
             default:
                 nextScene = "MainMenu";
                 break;
