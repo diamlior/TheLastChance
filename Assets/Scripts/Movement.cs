@@ -160,6 +160,7 @@ public class Movement : MonoBehaviour
 
         SceneSwitcher();
     }
+
     IEnumerator Wait()
     {
         shoot();
@@ -285,26 +286,164 @@ public class Movement : MonoBehaviour
 
             if (StaticData.getLife() == 0)
             {
-                FailedScreen.SetActive(true);                
+                DefeatScreen.SetActive(true);
+                showStars(DefeatScreen);
+                int highscore = StaticData.getHighscore();
+                int coins = StaticData.getCoins();
+                if (coins > highscore)
+                {
+                    Debug.Log("Got into highscore");
+                    StaticData.setHighscore(coins);
+                }
             }
             else
             {
-                DefeatScreen.SetActive(true);
+                FailedScreen.SetActive(true);
+                showStars(FailedScreen);
                 int life = StaticData.getLife();
-                resetCoins();
-            }
-            int highscore = StaticData.getHighscore();
-            int coins = StaticData.getCoins();
-            if (coins > highscore)
-            {
-                Debug.Log("Got into highscore");
-                StaticData.setHighscore(coins);
+                //resetCoins();
             }
             pauseButton.SetActive(false);
             PauseAll();
             rb.constraints = RigidbodyConstraints.None;
             rb.AddForce(new Vector3(1, 1, -1) * 100);
         }
+    }
+
+    IEnumerator Wait05Second()
+    {
+        yield return new WaitForSeconds(0.5f);
+    }
+    private void showStars(GameObject canvas)
+    {
+        Transform Star1 = canvas.transform.GetChild(0).transform.Find("Full Star");
+        Transform Star2 = canvas.transform.GetChild(0).transform.Find("Full Star (1)");
+        Transform Star3 = canvas.transform.GetChild(0).transform.Find("Full Star (2)");
+        switch (sceneName)
+        {
+            case "Tutorial":
+                StartCoroutine(showStarsTutorial(canvas, Star1, Star2, Star3));
+                break;
+            case "StageOne":
+                StartCoroutine(showStarsStageOne(canvas, Star1, Star2, Star3));
+                break;
+            case "StageTwo":
+                StartCoroutine(showStarsStageTwo(canvas, Star1, Star2, Star3));
+                break;
+            case "StageThree":
+                StartCoroutine(showStarsStageThree(canvas, Star1, Star2, Star3));
+                break;
+            case "StageFour":
+                StartCoroutine(showStarsStageFour(canvas, Star1, Star2, Star3));
+                break;
+            default:
+                break;
+        }
+    }
+    IEnumerator showStarsTutorial(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
+    {
+        yield return new WaitForSeconds(0.5f);
+    }
+    IEnumerator showStarsStageOne(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
+    {
+        // max 28 coins
+        yield return new WaitForSeconds(1f);
+        int currentCoins = StaticData.getCoins();
+        if (currentCoins >= 7 && currentCoins < 14)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Star1.gameObject.SetActive(true);
+        }
+        else if (currentCoins >= 14 && currentCoins < 21)
+        {
+            Star1.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star2.gameObject.SetActive(true);
+        }
+        else if (currentCoins >= 21)
+        {
+            Star1.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star2.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star3.gameObject.SetActive(true);
+        }
+    }
+
+    IEnumerator showStarsStageTwo(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
+    {
+        // max 38 coins
+        yield return new WaitForSeconds(1f);
+        int currentCoins = StaticData.getCoins();
+        if (currentCoins >= 9 && currentCoins < 18)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Star1.gameObject.SetActive(true);
+        }
+        else if (currentCoins >= 18 && currentCoins < 27)
+        {
+            Star1.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star2.gameObject.SetActive(true);
+        }
+        else if (currentCoins >= 27)
+        {
+            Star1.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star2.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star3.gameObject.SetActive(true);
+        }
+    }
+    IEnumerator showStarsStageThree(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
+    {
+        yield return new WaitForSeconds(1f);
+        int currentCoins = StaticData.getCoins();
+        if (currentCoins >= 9 && currentCoins < 18)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Star1.gameObject.SetActive(true);
+        }
+        else if (currentCoins >= 18 && currentCoins < 27)
+        {
+            Star1.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star2.gameObject.SetActive(true);
+        }
+        else if (currentCoins >= 27)
+        {
+            Star1.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star2.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star3.gameObject.SetActive(true);
+        }
+
+    }
+    IEnumerator showStarsStageFour(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
+    {
+        yield return new WaitForSeconds(1f);
+        int currentCoins = StaticData.getCoins();
+        if (currentCoins >= 9 && currentCoins < 18)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Star1.gameObject.SetActive(true);
+        }
+        else if (currentCoins >= 18 && currentCoins < 27)
+        {
+            Star1.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star2.gameObject.SetActive(true);
+        }
+        else if (currentCoins >= 27)
+        {
+            Star1.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star2.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            Star3.gameObject.SetActive(true);
+        }
+
     }
 
     public void resetCoins()
@@ -329,6 +468,7 @@ public class Movement : MonoBehaviour
                 //GoalAndExtraLifeCanvas.SetActive(true);
                 goalFX.Play();
                 VictoryScreen.SetActive(true);
+                showStars(VictoryScreen);
                 StaticData.setLife(initialLife + 1);
                 didScore = true;
             }
@@ -338,7 +478,8 @@ public class Movement : MonoBehaviour
                 goalFX.Play();
                 //GoalCanvas.SetActive(true);
                 VictoryScreen.SetActive(true);
-                
+                showStars(VictoryScreen);
+
                 didScore = true;
             }
             Debug.Log(other.name + " Triggered");
@@ -444,27 +585,5 @@ public class Movement : MonoBehaviour
         }
         rb.constraints = RigidbodyConstraints.None;
         isEnabled = true;
-    }
-    
-    public void SetSpeed100()
-    {
-        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-        foreach (GameObject obs in obstacles)
-        {
-            Obstacle obstacle = obs.GetComponent<Obstacle>();
-            if (obstacle != null)
-                obstacle.speed = 80;
-        }
-    }
-
-    public void SetSpeed8()
-    {
-        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-        foreach (GameObject obs in obstacles)
-        {
-            Obstacle obstacle = obs.GetComponent<Obstacle>();
-            if (obstacle != null)
-                obstacle.speed = 8;
-        }
-    }
+    }    
 }
