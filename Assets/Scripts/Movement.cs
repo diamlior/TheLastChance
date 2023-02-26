@@ -428,15 +428,16 @@ public class Movement : MonoBehaviour
     }
     IEnumerator showStarsStageThree(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
     {
+        // 68 coins
         yield return new WaitForSeconds(1f);
         int currentCoins = StaticData.getCoins() - initialCoins;
-        if (currentCoins >= 9 && currentCoins < 18)
+        if (currentCoins >= 15 && currentCoins < 30)
         {
             yield return new WaitForSeconds(0.5f);
             Star1.gameObject.SetActive(true);
             GainingStarAudio.Play();
         }
-        else if (currentCoins >= 18 && currentCoins < 27)
+        else if (currentCoins >= 30 && currentCoins < 45)
         {
             Star1.gameObject.SetActive(true);
             GainingStarAudio.Play();
@@ -444,7 +445,7 @@ public class Movement : MonoBehaviour
             Star2.gameObject.SetActive(true);
             GainingStarAudio.Play();
         }
-        else if (currentCoins >= 27)
+        else if (currentCoins >= 45)
         {
             Star1.gameObject.SetActive(true);
             GainingStarAudio.Play();
