@@ -291,6 +291,7 @@ public class Movement : MonoBehaviour
             if (StaticData.getLife() == 0)
             {
                 DefeatScreen.SetActive(true);
+                pauseButton.SetActive(false);
                 DeathAudio.Play();
                 showStars(DefeatScreen);
                 int highscore = StaticData.getHighscore();
@@ -304,6 +305,7 @@ public class Movement : MonoBehaviour
             else
             {
                 FailedScreen.SetActive(true);
+                pauseButton.SetActive(false);
                 DeathAudio.Play();
                 showStars(FailedScreen);
                 int life = StaticData.getLife();
@@ -508,6 +510,7 @@ public class Movement : MonoBehaviour
                 //GoalAndExtraLifeCanvas.SetActive(true);
                 goalFX.Play();
                 VictoryScreen.SetActive(true);
+                pauseButton.SetActive(false);
                 showStars(VictoryScreen);
                 StaticData.setLife(initialLife + 1);
                 didScore = true;

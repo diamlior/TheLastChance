@@ -22,7 +22,10 @@ EditorBuildSettings:
     guid: 5e78a10f31cf31b408c6c34313c78949
   - enabled: 1
     path: Assets/Scenes/StageFour.unity
-    guid: 695a5880353d57344a7dfa28872dd7a6
+    guid: 362b150910ea8c248b8072be747c34ce
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/TutorialScene.unity
     guid: b1af17acb8da76947bb6574302b055a1
