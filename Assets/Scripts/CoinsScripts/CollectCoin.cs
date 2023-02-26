@@ -8,9 +8,12 @@ public class CollectCoin : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        coinFX.Play();
-        StaticData.addCoins(1);
-        this.gameObject.SetActive(false);
+        if (other.transform.name.Equals("Ball"))
+        {
+            coinFX.Play();
+            StaticData.addCoins(1);
+            this.gameObject.SetActive(false);
+        }
     }
 }
 
