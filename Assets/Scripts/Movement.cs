@@ -491,6 +491,7 @@ public class Movement : MonoBehaviour
     public void resetCoins()
     {
         StaticData.setCoins(initialCoins);
+        StaticData.setLife(initialLife);
     }
     void OnTriggerEnter(Collider other)
     {
