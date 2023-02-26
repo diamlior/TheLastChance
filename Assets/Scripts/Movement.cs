@@ -41,6 +41,7 @@ public class Movement : MonoBehaviour
     int initialCoins;
     Vector3 GoalPos;
     bool failed;
+    private AudioSource DeathAudio, GainingStarAudio;
 
 
     //public Canvas goalMsgCanvas;
@@ -59,6 +60,9 @@ public class Movement : MonoBehaviour
         startPos = transform.position;
         initialLife = StaticData.getLife();
         failed = false;
+        DeathAudio = GameObject.Find("DeathAudio").GetComponent<AudioSource>();
+        GainingStarAudio = GameObject.Find("GainingStarAudio").GetComponent<AudioSource>();
+
     }
     void OnCollisionStay()
     {
@@ -287,6 +291,7 @@ public class Movement : MonoBehaviour
             if (StaticData.getLife() == 0)
             {
                 DefeatScreen.SetActive(true);
+                DeathAudio.Play();
                 showStars(DefeatScreen);
                 int highscore = StaticData.getHighscore();
                 int coins = StaticData.getCoins();
@@ -299,6 +304,7 @@ public class Movement : MonoBehaviour
             else
             {
                 FailedScreen.SetActive(true);
+                DeathAudio.Play();
                 showStars(FailedScreen);
                 int life = StaticData.getLife();
                 //resetCoins();
@@ -342,7 +348,17 @@ public class Movement : MonoBehaviour
     }
     IEnumerator showStarsTutorial(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
     {
+
+        yield return new WaitForSeconds(1f);
         yield return new WaitForSeconds(0.5f);
+        Star1.gameObject.SetActive(true);
+        GainingStarAudio.Play();
+        yield return new WaitForSeconds(0.5f);
+        Star2.gameObject.SetActive(true);
+        GainingStarAudio.Play();
+        yield return new WaitForSeconds(0.5f);
+        Star3.gameObject.SetActive(true);
+        GainingStarAudio.Play();
     }
     IEnumerator showStarsStageOne(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
     {
@@ -353,20 +369,26 @@ public class Movement : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
         else if (currentCoins >= 14 && currentCoins < 21)
         {
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star2.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
         else if (currentCoins >= 21)
         {
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star2.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star3.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
     }
 
@@ -379,20 +401,26 @@ public class Movement : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
         else if (currentCoins >= 18 && currentCoins < 27)
         {
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star2.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
         else if (currentCoins >= 27)
         {
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star2.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star3.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
     }
     IEnumerator showStarsStageThree(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
@@ -403,20 +431,26 @@ public class Movement : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
         else if (currentCoins >= 18 && currentCoins < 27)
         {
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star2.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
         else if (currentCoins >= 27)
         {
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star2.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star3.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
 
     }
@@ -428,20 +462,26 @@ public class Movement : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
         else if (currentCoins >= 18 && currentCoins < 27)
         {
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star2.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
         else if (currentCoins >= 27)
         {
             Star1.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star2.gameObject.SetActive(true);
+            GainingStarAudio.Play();
             yield return new WaitForSeconds(0.5f);
             Star3.gameObject.SetActive(true);
+            GainingStarAudio.Play();
         }
 
     }
