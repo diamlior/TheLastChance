@@ -19392,7 +19392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &577221749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23679,7 +23679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &703019674
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45942,7 +45942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1359461521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -64775,6 +64775,7 @@ MonoBehaviour:
   goalFX: {fileID: 1311962764}
   jumpForce: 2.5
   speed: 250
+  isPenaltyMode: 0
   isEnabled: 1
   Force: 0
   target: {fileID: 1716746101}
@@ -68030,7 +68031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958745763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08618164, y: -0.8761186, z: -80.5804}
+  m_LocalPosition: {x: -0.08618164, y: -0.8761186, z: -75.87}
   m_LocalScale: {x: 6.83, y: 4.62, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
