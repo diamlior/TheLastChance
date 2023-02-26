@@ -294,7 +294,7 @@ public class Movement : MonoBehaviour
                 DefeatScreen.SetActive(true);
                 pauseButton.SetActive(false);
                 DeathAudio.Play();
-                showStars(DefeatScreen);
+                //showStars(DefeatScreen);
                 int highscore = StaticData.getHighscore();
                 int coins = StaticData.getCoins();
                 if (coins > highscore)
@@ -308,7 +308,7 @@ public class Movement : MonoBehaviour
                 FailedScreen.SetActive(true);
                 pauseButton.SetActive(false);
                 DeathAudio.Play();
-                showStars(FailedScreen);
+                //showStars(FailedScreen);
                 int life = StaticData.getLife();
                 //resetCoins();
             }
