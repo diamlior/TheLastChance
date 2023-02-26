@@ -8,17 +8,20 @@ public class EnableByDistance : MonoBehaviour
     GameObject player;
     GameObject firstFan;
     GameObject lastFan;
-    float minDistance = 50f;
+    Movement playerInfo;
+    float minDistance = 40f;
     bool allEnabled = true;
     // Start is called before the first frame update
     void Start()
     {
+        
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
             Debug.Log("Player GameObject has no tag 'Player'!!");
             gameObject.SetActive(false);
         }
+        playerInfo = player.GetComponent<Movement>();
         firstFan = transform.GetChild(0).GetChild(0).gameObject;
         lastFan = transform.GetChild(3).GetChild(3).gameObject;
         children = new GameObject[transform.childCount];
@@ -46,7 +49,7 @@ public class EnableByDistance : MonoBehaviour
         float firstFanPos = firstFan.transform.position.z;
         float lastFanPos = lastFan.transform.position.z;
         float dist = firstFanPos - playerPos;
-        if (playerPos > lastFanPos)
+        if (!playerInfo.isPenaltyMode && playerPos > lastFanPos + 20f)
         {
             gameObject.tag = "Dead";
             GameObject.Destroy(gameObject);

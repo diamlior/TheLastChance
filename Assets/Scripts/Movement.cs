@@ -16,7 +16,8 @@ public class Movement : MonoBehaviour
     public AudioSource coinFX, goalFX;
     public float jumpForce = 5;
     public float speed = 100;
-    private bool isGrounded = true, stopJumped = false, isPenaltyMode = false, isShoot = false;
+    public bool isPenaltyMode = false;
+    private bool isGrounded = true, stopJumped = false, isShoot = false;
     bool movingLeft = false, movingRight = false;
     float currentX, targetX, startingX;
 
@@ -508,7 +509,7 @@ public class Movement : MonoBehaviour
             {
                 other.gameObject.SetActive(false);
                 Debug.Log("Hit Target");
-                //GoalAndExtraLifeCanvas.SetActive(true);
+                GoalAndExtraLifeCanvas.SetActive(true);
                 goalFX.Play();
                 VictoryScreen.SetActive(true);
                 pauseButton.SetActive(false);

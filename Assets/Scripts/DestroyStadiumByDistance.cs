@@ -6,10 +6,12 @@ public class DestroyStadiumByDistance : MonoBehaviour
 {
     GameObject player;
     float destroyingDistance = 30f;
+    Movement playerInfo;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerInfo = player.GetComponent<Movement>();
         if (player == null)
         {
             Debug.Log("Player GameObject has no tag 'Player'!!");
@@ -20,7 +22,7 @@ public class DestroyStadiumByDistance : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (player.transform.position.z - transform.position.z > destroyingDistance)
+        if (!playerInfo.isPenaltyMode && player.transform.position.z - transform.position.z > destroyingDistance)
             GameObject.Destroy(gameObject);
     }
 }
