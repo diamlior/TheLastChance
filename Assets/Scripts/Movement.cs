@@ -11,15 +11,14 @@ public class Movement : MonoBehaviour
 {
     public GameObject player;
     public Rigidbody rb;
-    public GameObject FailedScreen;
+    public GameObject FailedScreen, DefeatScreen, VictoryScreen;
     public GameObject pauseButton;
-    public AudioSource coinFX;
+    public AudioSource coinFX, goalFX;
     public float jumpForce = 5;
     public float speed = 100;
     private bool isGrounded = true, stopJumped = false, isPenaltyMode = false, isShoot = false;
     bool movingLeft = false, movingRight = false;
     float currentX, targetX, startingX;
-    private GameObject[] obstacles1;
 
     string sceneName;
     Animator animator;
@@ -225,8 +224,8 @@ public class Movement : MonoBehaviour
         }
 
     }
-
-    void failure()
+    /*
+    void failureOld()
     {
         if (!failed) // This is needed because failure can be triggered several times for the same round.
         {
@@ -255,15 +254,52 @@ public class Movement : MonoBehaviour
             else
             {
                 int life = StaticData.getLife();
+                
                 if (life > 1)
                     textOnFailedScreen = String.Format("FAILED!\nYou still have {0} tries left!", StaticData.getLife());
                 else
                     textOnFailedScreen = "FAILED!\nYou still have 1 try left!";
+                
                 resetCoins();
             }
             Debug.Log(textOnFailedScreen);
+            
             TMP_Text failText = FailedScreen.transform.GetChild(3).GetComponent<TMP_Text>();
             failText.text = textOnFailedScreen;
+            
+            pauseButton.SetActive(false);
+            PauseAll();
+            rb.constraints = RigidbodyConstraints.None;
+            rb.AddForce(new Vector3(1, 1, -1) * 100);
+        }
+    }
+    */
+
+    void failure()
+    {
+        if (!failed) // This is needed because failure can be triggered several times for the same round.
+        {
+            failed = true;
+            Debug.Log("You are dead!");
+            StaticData.setLife(initialLife - 1);
+
+            if (StaticData.getLife() == 0)
+            {
+                FailedScreen.SetActive(true);                
+            }
+            else
+            {
+                DefeatScreen.SetActive(true);
+                int life = StaticData.getLife();
+                resetCoins();
+            }
+            int highscore = StaticData.getHighscore();
+            int coins = StaticData.getCoins();
+            if (coins > highscore)
+            {
+                Debug.Log("Got into highscore");
+                StaticData.setHighscore(coins);
+            }
             pauseButton.SetActive(false);
             PauseAll();
             rb.constraints = RigidbodyConstraints.None;
@@ -279,11 +315,6 @@ public class Movement : MonoBehaviour
     {
         if (didScore)
             return;
-        if(other.gameObject.name == "StartBlock")
-        {
-            Debug.Log("Hit StartBlock");
-            SetSpeed8();
-        }
         else if (other.gameObject.name == "EndRunBlock")
         {
             shouldStartPenaltyMode = true;
@@ -295,19 +326,24 @@ public class Movement : MonoBehaviour
             {
                 other.gameObject.SetActive(false);
                 Debug.Log("Hit Target");
-                GoalAndExtraLifeCanvas.SetActive(true);
+                //GoalAndExtraLifeCanvas.SetActive(true);
+                goalFX.Play();
+                VictoryScreen.SetActive(true);
                 StaticData.setLife(initialLife + 1);
                 didScore = true;
             }
             else
             {
                 Debug.Log("Hit Goal");
-                GoalCanvas.SetActive(true);
+                goalFX.Play();
+                //GoalCanvas.SetActive(true);
+                VictoryScreen.SetActive(true);
+                
                 didScore = true;
             }
             Debug.Log(other.name + " Triggered");
             PauseAllNotTotal();
-            StartCoroutine(PauseTwoSecExecuteGoalSwitch());
+            //StartCoroutine(PauseTwoSecExecuteGoalSwitch());
             
             //goalObject.SetActive(false);
         }
