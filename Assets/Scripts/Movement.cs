@@ -399,7 +399,7 @@ public class Movement : MonoBehaviour
     {
         // max 38 coins
         yield return new WaitForSeconds(1f);
-        int currentCoins = StaticData.getCoins();
+        int currentCoins = StaticData.getCoins() - initialCoins;
         if (currentCoins >= 9 && currentCoins < 18)
         {
             yield return new WaitForSeconds(0.5f);
@@ -429,7 +429,7 @@ public class Movement : MonoBehaviour
     IEnumerator showStarsStageThree(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
     {
         yield return new WaitForSeconds(1f);
-        int currentCoins = StaticData.getCoins();
+        int currentCoins = StaticData.getCoins() - initialCoins;
         if (currentCoins >= 9 && currentCoins < 18)
         {
             yield return new WaitForSeconds(0.5f);
@@ -460,7 +460,7 @@ public class Movement : MonoBehaviour
     IEnumerator showStarsStageFour(GameObject canvas, Transform Star1, Transform Star2, Transform Star3)
     {
         yield return new WaitForSeconds(1f);
-        int currentCoins = StaticData.getCoins();
+        int currentCoins = StaticData.getCoins() - initialCoins;
         if (currentCoins >= 9 && currentCoins < 18)
         {
             yield return new WaitForSeconds(0.5f);
@@ -492,7 +492,7 @@ public class Movement : MonoBehaviour
     public void resetCoins()
     {
         StaticData.setCoins(initialCoins);
-        StaticData.setLife(initialLife);
+        //StaticData.setLife(initialLife);
     }
     void OnTriggerEnter(Collider other)
     {
