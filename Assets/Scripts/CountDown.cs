@@ -15,6 +15,7 @@ public class CountDown : MonoBehaviour
         movement = player.GetComponent<Movement>();
         movement.PauseAll();
         StartCoroutine(StartCountDown());
+
     }
 
     // Update is called once per frame

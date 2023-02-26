@@ -450,8 +450,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3132827565773464112}
   m_LocalRotation: {x: -0, y: 0.9998602, z: -0, w: 0.016720053}
-  m_LocalPosition: {x: 0.00017443, y: 0, z: -0.005214}
-  m_LocalScale: {x: 0.5759211, y: 0.775965, z: 0.82447}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5759211, y: 0.775965, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1024382913326483278}
@@ -470,6 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6146b9e8367c5d34ba99eb7a2f6590c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacle: {fileID: 3117918663046819748}
+  obstacle_go: {fileID: 3132827565773464112}
   speed: 13
   isPaused: 0
 --- !u!65 &8538970645843601291

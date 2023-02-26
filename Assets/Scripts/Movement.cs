@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -19,8 +18,7 @@ public class Movement : MonoBehaviour
     private bool isGrounded = true, stopJumped = false, isPenaltyMode = false, isShoot = false;
     bool movingLeft = false, movingRight = false;
     float currentX, targetX, startingX;
-    private GameObject[] obstacles1;
-
+    
     string sceneName;
     Animator animator;
     private LevelChangerScript levelChangeScript;
@@ -32,16 +30,12 @@ public class Movement : MonoBehaviour
     public Slider forceUI;
     public GameObject Gauage;
     public GameObject GoalCanvas;
-    public GameObject GoalAndExtraLifeCanvas;
     GameObject goalObject;
     public bool didScore = false;
-    bool shouldStartPenaltyMode = false;
     Boolean backToBase;
     Vector3 startPos;
-    int initialLife;
-    int initialCoins;
+
     Vector3 GoalPos;
-    bool failed;
 
 
     //public Canvas goalMsgCanvas;
@@ -49,7 +43,6 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialCoins = StaticData.getCoins();
         goalObject = GameObject.FindGameObjectWithTag("Goal");
         backToBase = false;
         startingX = transform.position.x;
@@ -58,8 +51,6 @@ public class Movement : MonoBehaviour
         levelChangeScript = GameObject.Find("LevelChanger").GetComponent<LevelChangerScript>();
         animator = player.GetComponent<Animator>();
         startPos = transform.position;
-        initialLife = StaticData.getLife();
-        failed = false;
     }
     void OnCollisionStay()
     {
@@ -85,12 +76,6 @@ public class Movement : MonoBehaviour
         */
         if (!isEnabled)
             return;
-        if (isGrounded && shouldStartPenaltyMode && !Input.GetKey(KeyCode.Space))
-        {
-            shouldStartPenaltyMode = false;
-            isPenaltyMode = true;
-            PenaltyMode();
-        }
         if (Input.GetKey(KeyCode.RightArrow) && !movingRight && currentX <= startingX && !isShoot)
         {
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
@@ -126,11 +111,9 @@ public class Movement : MonoBehaviour
 
         else if (Input.GetKeyUp(KeyCode.Space) && isPenaltyMode && !isShoot) //shoot
         {
-            shoot();
-            //StartCoroutine(Wait());
+            //shoot();
+            StartCoroutine(Wait());
         }
-
-
         else if (Input.GetKey(KeyCode.Space) && isGrounded && !isShoot)
         {
             if (!isPenaltyMode)
@@ -145,6 +128,13 @@ public class Movement : MonoBehaviour
                 slider();
             }
         }       
+        
+        else if (!Input.GetKey(KeyCode.Space) && !isGrounded && !stopJumped && !isShoot)
+        {
+            if (rb.velocity.y > 0)
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            stopJumped = true;
+        }
         
     }
     void shoot()
@@ -197,8 +187,8 @@ public class Movement : MonoBehaviour
         if (collider != "Floor")
         {
             //if (didScore && backToBase)
-            if (didScore)
-            {
+                if (didScore)
+                {
                 Debug.Log("OnCollision did score is true");
                 
             }
@@ -210,13 +200,25 @@ public class Movement : MonoBehaviour
             {
                 if (!isPenaltyMode && !didScore)
                 {
-                    failure();
+                    Debug.Log("You are dead 1st!");
+                    FailedScreen.SetActive(true);
+                    pauseButton.SetActive(false);
+                    PauseAll();
+                    rb.constraints = RigidbodyConstraints.None;
+                    rb.AddForce(new Vector3(1, 1, -1) * 100);
+                    //levelChangeScript.FadeToLevel(sceneName);
                 }
                 else
                 {
+                    //PauseForThreeSeconds();
                     if (!didScore)
                     {
-                        failure();
+                        Debug.Log("You are dead! 2nd");
+                        FailedScreen.SetActive(true);
+                        pauseButton.SetActive(false);
+                        PauseAll();
+                        rb.constraints = RigidbodyConstraints.None;
+                        rb.AddForce(new Vector3(1, 1, -1) * 100);
                     }
                 }
 
@@ -225,102 +227,49 @@ public class Movement : MonoBehaviour
         }
 
     }
-
-    void failure()
+    void OnTriggerEnter(Collider other)
     {
-        if (!failed) // This is needed because failure can be triggered several times for the same round.
+        if (other.gameObject.name == "EndRunBlock")
         {
-            failed = true;
-            Debug.Log("You are dead!");
-            StaticData.setLife(initialLife - 1);
-            string textOnFailedScreen = "";
+            PenaltyMode();
+        }
+        else if (other.gameObject.name == "GoalBlock")
+        {
+            Debug.Log(other.name + " Triggered");
+            GoalCanvas.SetActive(true);
+            PauseAllNotTotal();
+            StartCoroutine(PauseTwoSecExecuteGoalSwitch());
+            didScore = true;
+            //goalObject.SetActive(false);
+        }
+        else if (other.gameObject.name == "BordersDown")
+        {
+            Debug.Log("You are dead! down border");
             FailedScreen.SetActive(true);
-
-            if (StaticData.getLife() == 0)
-            {
-                textOnFailedScreen += "YOU'RE OUT!";
-
-                FailedScreen.transform.GetChild(0).gameObject.SetActive(false);
-                int highscore = StaticData.getHighscore();
-                int coins = StaticData.getCoins();
-                if (coins > highscore)
-                {
-                    Debug.Log("Got into highscore");
-                    textOnFailedScreen += "\nWell done! New Highscore!";
-                    StaticData.setHighscore(coins);
-                    Debug.Log(textOnFailedScreen);
-                }
-                Debug.Log(textOnFailedScreen);
-            }
-            else
-            {
-                int life = StaticData.getLife();
-                if (life > 1)
-                    textOnFailedScreen = String.Format("FAILED!\nYou still have {0} tries left!", StaticData.getLife());
-                else
-                    textOnFailedScreen = "FAILED!\nYou still have 1 try left!";
-                resetCoins();
-            }
-            Debug.Log(textOnFailedScreen);
-            TMP_Text failText = FailedScreen.transform.GetChild(3).GetComponent<TMP_Text>();
-            failText.text = textOnFailedScreen;
             pauseButton.SetActive(false);
             PauseAll();
             rb.constraints = RigidbodyConstraints.None;
             rb.AddForce(new Vector3(1, 1, -1) * 100);
         }
-    }
-
-    public void resetCoins()
-    {
-        StaticData.setCoins(initialCoins);
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if (didScore)
-            return;
-        if(other.gameObject.name == "StartBlock")
+        /*
+        else
         {
-            Debug.Log("Hit StartBlock");
-            SetSpeed8();
-        }
-        else if (other.gameObject.name == "EndRunBlock")
-        {
-            shouldStartPenaltyMode = true;
-        }
-        if (other.gameObject.name == "GoalBlock" || other.gameObject.name == "GoalTarget")
-        {
-            
-            if (other.gameObject.name == "GoalTarget")
+            Transform otherParent = other.gameObject.GetComponentInParent<Transform>();
+            if (otherParent != null)
             {
-                other.gameObject.SetActive(false);
-                Debug.Log("Hit Target");
-                GoalAndExtraLifeCanvas.SetActive(true);
-                StaticData.setLife(initialLife + 1);
-                didScore = true;
+                if (otherParent.name.Equals("Coins"))
+                {
+                    coinFX.Play();
+                    other.gameObject.SetActive(false);
+                }
             }
-            else
-            {
-                Debug.Log("Hit Goal");
-                GoalCanvas.SetActive(true);
-                didScore = true;
-            }
-            Debug.Log(other.name + " Triggered");
-            PauseAllNotTotal();
-            StartCoroutine(PauseTwoSecExecuteGoalSwitch());
-            
-            //goalObject.SetActive(false);
-        }
-        else if (other.gameObject.name == "BordersDown")
-        {
-            failure();
-        }
-
+        } 
+        */
     }
 
     void SceneSwitcher()
     {
-        string nextScene = "";;
+        string nextScene = "";
         switch (sceneName)
         {
             case "Tutorial":
@@ -343,7 +292,9 @@ public class Movement : MonoBehaviour
 
     public void PenaltyMode()
     {
+        isPenaltyMode = true;
         Gauage.SetActive(true);
+        
     }
 
     public void PauseAll()
@@ -404,25 +355,4 @@ public class Movement : MonoBehaviour
         isEnabled = true;
     }
     
-    public void SetSpeed100()
-    {
-        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-        foreach (GameObject obs in obstacles)
-        {
-            Obstacle obstacle = obs.GetComponent<Obstacle>();
-            if (obstacle != null)
-                obstacle.speed = 80;
-        }
-    }
-
-    public void SetSpeed8()
-    {
-        GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-        foreach (GameObject obs in obstacles)
-        {
-            Obstacle obstacle = obs.GetComponent<Obstacle>();
-            if (obstacle != null)
-                obstacle.speed = 8;
-        }
-    }
 }
