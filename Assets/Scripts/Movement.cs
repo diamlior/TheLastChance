@@ -505,15 +505,14 @@ public class Movement : MonoBehaviour
         }
         if (other.gameObject.name == "GoalBlock" || other.gameObject.name == "GoalTarget")
         {
-            
-            if (other.gameObject.name == "GoalTarget")
+                if (other.gameObject.name == "GoalTarget")
             {
                 other.gameObject.SetActive(false);
-                Debug.Log("Hit Target");
+                Debug.Log("Hit Target");                                                              
                 GoalAndExtraLifeCanvas.SetActive(true);
                 goalFX.Play();
                 VictoryScreen.SetActive(true);
-                pauseButton.SetActive(false);
+                pauseButton.SetActive(false);                          
                 showStars(VictoryScreen);
                 StaticData.setLife(initialLife + 1);
                 didScore = true;
