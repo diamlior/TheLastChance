@@ -19,7 +19,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/Users/yoffe/Unity/SkyRoads/WebGL Builds/SkyRoadsWeb;;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"C:/Users/diaml/University/SkyRoads/WebGL Builds;C:/Users/yoffe/Unity/SkyRoads/WebGL Builds/SkyRoadsWeb;;;;;;;;\"}"
             }
         ]
     }
