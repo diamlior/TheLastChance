@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5444019, g: 0.50700164, b: 0.5242697, a: 1}
+  m_IndirectSpecularColor: {r: 0.5444154, g: 0.50701064, b: 0.5242721, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4401,6 +4401,10 @@ PrefabInstance:
     - target: {fileID: 8291362251279791381, guid: 09fda53434dfaab4dab0d79631fd1523, type: 3}
       propertyPath: m_Name
       value: GoalmsgExtraLifeCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291362251279791381, guid: 09fda53434dfaab4dab0d79631fd1523, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09fda53434dfaab4dab0d79631fd1523, type: 3}
@@ -63564,6 +63568,7 @@ MonoBehaviour:
   goalFX: {fileID: 948128932}
   jumpForce: 2.5
   speed: 250
+  isPenaltyMode: 0
   isEnabled: 1
   Force: 0
   target: {fileID: 1716746101}

@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     private bool isGrounded = true, stopJumped = false, isShoot = false;
     bool movingLeft = false, movingRight = false;
     float currentX, targetX, startingX;
+    private bool didHitTarget = false;
 
     string sceneName;
     Animator animator;
@@ -494,6 +495,10 @@ public class Movement : MonoBehaviour
     public void resetCoins()
     {
         StaticData.setCoins(initialCoins);
+        if (didHitTarget)
+        {
+            StaticData.setLife(StaticData.getLife() - 1);
+        }
         //StaticData.setLife(initialLife);
     }
     void OnTriggerEnter(Collider other)
@@ -509,9 +514,12 @@ public class Movement : MonoBehaviour
                 if (other.gameObject.name == "GoalTarget")
             {
                 other.gameObject.SetActive(false);
-                Debug.Log("Hit Target");                                                              
-                GoalAndExtraLifeCanvas.SetActive(true);
+                Debug.Log("Hit Target");
+                didHitTarget = true;
+                //GoalAndExtraLifeCanvas.SetActive(true);
                 goalFX.Play();
+                FailedScreen.SetActive(false);
+                DefeatScreen.SetActive(false);
                 VictoryScreen.SetActive(true);
                 pauseButton.SetActive(false);                          
                 showStars(VictoryScreen);
@@ -523,6 +531,8 @@ public class Movement : MonoBehaviour
                 Debug.Log("Hit Goal");
                 goalFX.Play();
                 //GoalCanvas.SetActive(true);
+                FailedScreen.SetActive(false);
+                DefeatScreen.SetActive(false);
                 VictoryScreen.SetActive(true);
                 showStars(VictoryScreen);
 
