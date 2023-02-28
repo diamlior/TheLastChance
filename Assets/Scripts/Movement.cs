@@ -511,7 +511,7 @@ public class Movement : MonoBehaviour
         }
         if (other.gameObject.name == "GoalBlock" || other.gameObject.name == "GoalTarget")
         {
-                if (other.gameObject.name == "GoalTarget")
+            if (other.gameObject.name == "GoalTarget")
             {
                 other.gameObject.SetActive(false);
                 Debug.Log("Hit Target");
@@ -521,10 +521,17 @@ public class Movement : MonoBehaviour
                 FailedScreen.SetActive(false);
                 DefeatScreen.SetActive(false);
                 VictoryScreen.SetActive(true);
-                pauseButton.SetActive(false);                          
+                pauseButton.SetActive(false);
                 showStars(VictoryScreen);
                 StaticData.setLife(initialLife + 1);
                 didScore = true;
+                int highscore = StaticData.getHighscore();
+                int coins = StaticData.getCoins();
+                if (coins > highscore)
+                {
+                    Debug.Log("Got into highscore");
+                    StaticData.setHighscore(coins);
+                }
             }
             else
             {
@@ -535,6 +542,13 @@ public class Movement : MonoBehaviour
                 DefeatScreen.SetActive(false);
                 VictoryScreen.SetActive(true);
                 showStars(VictoryScreen);
+                int highscore = StaticData.getHighscore();
+                int coins = StaticData.getCoins();
+                if (coins > highscore)
+                {
+                    Debug.Log("Got into highscore");
+                    StaticData.setHighscore(coins);
+                }
 
                 didScore = true;
             }
