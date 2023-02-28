@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TextRevealer : MonoBehaviour {
 
@@ -29,5 +30,7 @@ public class TextRevealer : MonoBehaviour {
 
 			yield return new WaitForSeconds(0.1f);
 		}
+		yield return new WaitForSeconds(8f);
+		SceneManager.LoadScene("MainMenu");
 	}
 }
