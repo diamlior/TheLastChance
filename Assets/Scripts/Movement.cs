@@ -516,7 +516,7 @@ public class Movement : MonoBehaviour
                 other.gameObject.SetActive(false);
                 Debug.Log("Hit Target");
                 didHitTarget = true;
-                //GoalAndExtraLifeCanvas.SetActive(true);
+                GoalAndExtraLifeCanvas.SetActive(true);
                 goalFX.Play();
                 FailedScreen.SetActive(false);
                 DefeatScreen.SetActive(false);
